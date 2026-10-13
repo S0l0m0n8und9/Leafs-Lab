@@ -1,0 +1,52 @@
+name: Current-season proof-of-value evidence
+on:
+  push:
+    paths:
+      - '.github/workflows/current-season-evidence.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download listed 2026-27 Toronto game inputs
+        run: |
+          python3 - <<'PY'
+          import csv, hashlib, io, json
+          from pathlib import Path
+          from datetime import datetime, timezone
+          from urllib.request import Request, urlopen
+          sources = {
+              'teams': 'https://moneypuck.com/moneypuck/playerData/careers/gameByGame/regular/teams/TOR.csv',
+              'skaters': 'https://moneypuck.com/moneypuck/playerData/teamPlayerGameByGame/2026/regular/skaters/TOR.csv',
+              'goalies': 'https://moneypuck.com/moneypuck/playerData/teamPlayerGameByGame/2026/regular/goalies/TOR.csv',
+          }
+          root = Path('current-evidence')
+          root.mkdir()
+          receipt = {'season': '20262027', 'purpose': 'Read-only current-game proof of value; no deployment or snapshot replacement', 'sources': []}
+          for kind, url in sources.items():
+              with urlopen(Request(url, headers={'User-Agent': 'Leafs-Lab/1.0 non-commercial evidence'}), timeout=45) as response:
+                  data = response.read(50_000_001)
+              if len(data) > 50_000_000:
+                  raise ValueError('Input exceeds safety bound')
+              rows = list(csv.DictReader(io.StringIO(data.decode('utf-8-sig'))))
+              if not rows:
+                  raise ValueError(kind + ': no source rows')
+              path = root / (kind + '.csv')
+              path.write_bytes(data)
+              receipt['sources'].append({'kind': kind, 'url': url, 'retrieved_at': datetime.now(timezone.utc).isoformat(), 'sha256': hashlib.sha256(data).hexdigest(), 'bytes': len(data), 'rows': len(rows), 'headers': list(rows[0])})
+              print(kind, len(rows), len(data))
+          (root / 'manifest.json').write_text(json.dumps(receipt, indent=2) + '\n')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: leafs-current-season-evidence
+          path: current-evidence/
+          retention-days: 3
+          if-no-files-found: error
+    # Read-only provider inputs; never commits, changes public/data, or deploys.
