@@ -75,9 +75,20 @@ def number(value: str | None, field: str) -> float | None:
     return parsed
 
 
-def _read_rows(kind: str, spec: dict, base: Path) -> tuple[list[dict], dict]:
+def _read_rows(kind: str, spec: dict, base: Path, include_seasons: set[str] | None = None) -> tuple[list[dict], dict]:
     mapping = spec.get('mapping', {})
     required = set(REQUIRED[kind]) - ({'game_type'} if spec.get('game_type_from_id') is True else set())
+    season_constant = None
+    if 'season_constant' in spec:
+        if 'season' in mapping:
+            raise ImportValidationError(f'{kind}: season_constant cannot coexist with a season mapping')
+        season_constant = normalize_season(spec['season_constant'])
+        required.discard('season')
+    derive_saves = spec.get('derive_saves_from_shots_against_and_ga') is True
+    if derive_saves:
+        if kind != 'goalies' or 'saves' in mapping:
+            raise ImportValidationError(f'{kind}: derive_saves requires a goalie source without a saves mapping')
+        required.discard('saves')
     missing = required - set(mapping)
     if missing:
         raise ImportValidationError(f'{kind}: missing required column mappings: {sorted(missing)}')
@@ -103,9 +114,17 @@ def _read_rows(kind: str, spec: dict, base: Path) -> tuple[list[dict], dict]:
             row = {field: raw_row[column].strip() for field, column in mapping.items()}
             if row['team'].upper() != 'TOR':
                 continue
+            try:
+                season = season_constant or normalize_season(row['season'])
+                # Career team files cover more years than season-specific player
+                # files. Exclude explicitly unrequested years before joining.
+                if include_seasons is not None and season not in include_seasons:
+                    continue
+                game_id = normalize_game_id(row['game_id'], season)
+            except ImportValidationError as error:
+                raise ImportValidationError(f'{kind} line {line}: {error}') from error
             if spec.get('game_type_from_id') is True:
-                season_for_type = normalize_season(row['season'])
-                if normalize_game_id(row['game_id'], season_for_type)[4:6] != '02':
+                if game_id[4:6] != '02':
                     continue
             elif row['game_type'] not in spec['game_type_values']:
                 continue
@@ -118,12 +137,13 @@ def _read_rows(kind: str, spec: dict, base: Path) -> tuple[list[dict], dict]:
             if strength not in STRENGTHS:
                 raise ImportValidationError(f'{kind}: invalid canonical strength {strength!r}')
             try:
-                season = normalize_season(row['season'])
-                game_id = normalize_game_id(row['game_id'], season)
                 if game_id[4:6] != '02':
                     raise ImportValidationError('Regular-season game ID must have type 02')
-                item = {'season': season, 'game_id': normalize_game_id(row['game_id'], season), 'team': 'TOR', 'strength': strength}
-                stats = {field: number(row[field], field) for field in STAT_FIELDS[kind]}
+                item = {'season': season, 'game_id': game_id, 'team': 'TOR', 'strength': strength}
+                stats = {field: number(row[field], field) for field in STAT_FIELDS[kind] if not (derive_saves and field == 'saves')}
+                if derive_saves:
+                    shots, ga = stats['shots_against'], stats['ga']
+                    stats['saves'] = None if shots is None or ga is None else number(shots - ga, 'saves')
                 if stats['toi_seconds'] is not None and spec['toi_unit'] == 'minutes':
                     stats['toi_seconds'] *= 60
                 item['stats'] = stats
@@ -205,9 +225,15 @@ def build_bundle(config: dict | str | Path, generated_at: str | None = None) -> 
     source_specs = config.get('sources', {})
     if set(source_specs) != set(STAT_FIELDS):
         raise ImportValidationError('Exactly teams, skaters and goalies sources required')
+    include_seasons = None
+    if 'include_seasons' in config:
+        configured_seasons = config['include_seasons']
+        if not isinstance(configured_seasons, list) or not configured_seasons:
+            raise ImportValidationError('include_seasons must be a non-empty list of explicit seasons')
+        include_seasons = {normalize_season(season) for season in configured_seasons}
     data, sources = {}, []
     for kind, spec in source_specs.items():
-        rows, source = _read_rows(kind, spec, base)
+        rows, source = _read_rows(kind, spec, base, include_seasons)
         data[kind] = _deduplicate(rows, kind)
         if mode == 'sample':
             source['validation_status'] = 'sample_validated'
