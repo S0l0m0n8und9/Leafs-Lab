@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "id": "leafs-current-shot-quality",
+  "title": "Current games: 5-on-5 shot share vs chance-quality share",
+  "description": "Toronto \u00b7 Sep 29\u2013Oct 10, 2026 \u00b7 six completed games",
+  "chart": {
+    "type": "line",
+    "x": "game",
+    "y": "share",
+    "series": "measure",
+    "showXAxisLabel": false,
+    "yLabel": "Toronto share (%)"
+  },
+  "rows": [
+    {
+      "game": "09-29 MTL",
+      "measure": "Shot share",
+      "share": 54.76
+    },
+    {
+      "game": "09-29 MTL",
+      "measure": "Chance-quality share",
+      "share": 50.89
+    },
+    {
+      "game": "09-30 NYI",
+      "measure": "Shot share",
+      "share": 46.15
+    },
+    {
+      "game": "09-30 NYI",
+      "measure": "Chance-quality share",
+      "share": 40.78
+    },
+    {
+      "game": "10-03 OTT",
+      "measure": "Shot share",
+      "share": 57.14
+    },
+    {
+      "game": "10-03 OTT",
+      "measure": "Chance-quality share",
+      "share": 39.03
+    },
+    {
+      "game": "10-06 NSH",
+      "measure": "Shot share",
+      "share": 56.25
+    },
+    {
+      "game": "10-06 NSH",
+      "measure": "Chance-quality share",
+      "share": 47.29
+    },
+    {
+      "game": "10-08 VGK",
+      "measure": "Shot share",
+      "share": 38.0
+    },
+    {
+      "game": "10-08 VGK",
+      "measure": "Chance-quality share",
+      "share": 33.45
+    },
+    {
+      "game": "10-10 COL",
+      "measure": "Shot share",
+      "share": 46.34
+    },
+    {
+      "game": "10-10 COL",
+      "measure": "Chance-quality share",
+      "share": 35.24
+    }
+  ],
+  "source": {
+    "label": "MoneyPuck Toronto game CSV; filtered to 2026 regular season and 5on5",
+    "files": [
+      {
+        "label": "teams original CSV",
+        "sha256": "1e88e24f39180a90f547e4bdebe7d013cd2a109976aebc78a4ed8b218e972661"
+      }
+    ],
+    "caveats": [
+      "Raw unadjusted xG; six-game descriptive sample. Shot share uses shots on goal.",
+      "Provider retrieved at 2026-10-13T10:18:38Z; source refresh time is unconfirmed."
+    ]
+  },
+  "generatedAt": "2026-10-13T10:28:12.360530+00:00",
+  "theme": "codex-classic"
+}
