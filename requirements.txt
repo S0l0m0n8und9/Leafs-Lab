@@ -1,0 +1,2 @@
+# Optional preferred analytical store; standard-library CSV path needs no install.
+duckdb>=1.1,<2

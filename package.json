@@ -1,0 +1,7 @@
+{
+  "name": "leafs-lab", "version": "1.0.0", "private": true, "type": "module",
+  "scripts": { "dev": "vite", "test": "tsc -p tsconfig.test.json && node --test tests/frontend/*.test.mjs", "typecheck": "tsc --noEmit", "build": "tsc --noEmit && vite build" },
+  "dependencies": { "react": "19.1.1", "react-dom": "19.1.1" },
+  "devDependencies": { "@types/react": "19.1.10", "@types/react-dom": "19.1.9", "prettier": "3.6.2", "typescript": "5.9.2", "vite": "7.1.7" },
+  "engines": { "node": ">=22.12.0" }
+}

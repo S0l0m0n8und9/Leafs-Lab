@@ -1,0 +1,83 @@
+name: Prepare validated real-data refresh
+on:
+  schedule:
+    - cron: '17 11 * * *'
+  workflow_dispatch:
+    inputs:
+      config_path:
+        description: 'Checked real config in this repository (after real-data acceptance)'
+        required: false
+        default: 'config/moneypuck-real.json'
+permissions:
+  contents: read
+concurrency:
+  group: leafs-lab-real-refresh
+  cancel-in-progress: false
+jobs:
+  refresh:
+    # Disabled for both scheduled and manual runs until a maintainer verifies real
+    # mappings/row spot checks and explicitly enables this repository variable.
+    if: vars.LEAFS_REAL_DATA_VALIDATED == 'true'
+    runs-on: ubuntu-latest
+    env:
+      REFRESH_CONFIG: ${{ inputs.config_path || vars.LEAFS_REAL_CONFIG_PATH || 'config/moneypuck-real.json' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Require checked URLs and explicit real mappings
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          from urllib.parse import urlparse
+          path = Path(os.environ['REFRESH_CONFIG'])
+          if not path.is_file():
+              raise SystemExit('Real configuration is missing; disable LEAFS_REAL_DATA_VALIDATED until acceptance is complete.')
+          config = json.loads(path.read_text())
+          if config.get('data_mode') != 'real':
+              raise SystemExit('Refresh must use explicit real mode; no fixture fallback.')
+          for kind in ('teams', 'skaters', 'goalies'):
+              source = config.get('sources', {}).get(kind, {})
+              url = urlparse(source.get('url') or '')
+              if source.get('mapping_verified') is not True or url.scheme != 'https' or url.hostname != 'moneypuck.com':
+                  raise SystemExit(f'{kind}: checked MoneyPuck download URL and verified mapping are required.')
+          PY
+      - run: python3 -m unittest discover -s tests -v
+      - run: npm ci
+      - run: npm test
+      - run: npm run typecheck
+      - name: Download and import real CSVs to a separate candidate
+        run: python3 -m pipeline download --config "$REFRESH_CONFIG" --raw-dir .refresh/raw --output .refresh/leafs-lab.json
+      - name: Validate the candidate against the frontend contract
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';
+          import { validateBundle } from './.test-build/data.js';
+          const bundle = validateBundle(JSON.parse(fs.readFileSync('.refresh/leafs-lab.json', 'utf8')));
+          if (bundle.data_mode !== 'real' || bundle.sources.some(s => s.mapping_status !== 'verified')) {
+            throw new Error('Only verified real snapshots may be archived.');
+          }
+          JS
+      - name: Build only the validated candidate
+        run: |
+          cp .refresh/leafs-lab.json public/data/leafs-lab.json
+          npm test
+          npm run typecheck
+          npm run build
+      - name: Archive validated refresh for manual publication
+        uses: actions/upload-artifact@v4
+        with:
+          name: leafs-lab-real-refresh
+          path: |
+            dist/
+            .refresh/leafs-lab.json
+          include-hidden-files: true
+          if-no-files-found: error
+    # No git write, Site deploy or deployment credential is configured.
+    # The prior hosted snapshot remains unchanged on every failure.

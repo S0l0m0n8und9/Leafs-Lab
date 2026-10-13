@@ -1,0 +1,114 @@
+{
+  "data_mode": "sample",
+  "requested_seasons": [
+    "20242025",
+    "20252026"
+  ],
+  "sources": {
+    "teams": {
+      "path": "teams.csv",
+      "url": null,
+      "retrieved_at": "2026-10-12T00:00:00Z",
+      "mapping": {
+        "season": "season",
+        "game_id": "game_id",
+        "date": "date",
+        "team": "team",
+        "opponent": "opponent",
+        "home_away": "home_away",
+        "game_type": "game_type",
+        "strength": "strength",
+        "xgf": "xgf",
+        "xga": "xga",
+        "gf": "gf",
+        "ga": "ga",
+        "shots_for": "shots_for",
+        "shots_against": "shots_against",
+        "toi_seconds": "toi_seconds",
+        "score_basis": "score_basis"
+      },
+      "mapping_verified": true,
+      "toi_unit": "seconds",
+      "game_type_values": [
+        "2"
+      ],
+      "strength_values": {
+        "all": "all",
+        "5on5": "5on5"
+      },
+      "home_away_values": {
+        "HOME": "home",
+        "AWAY": "away"
+      },
+      "score_basis": "before_shootout"
+    },
+    "skaters": {
+      "path": "skaters.csv",
+      "url": null,
+      "retrieved_at": "2026-10-12T00:00:00Z",
+      "mapping": {
+        "season": "season",
+        "game_id": "game_id",
+        "player_id": "player_id",
+        "name": "name",
+        "position": "position",
+        "team": "team",
+        "game_type": "game_type",
+        "strength": "strength",
+        "goals": "goals",
+        "ixg": "ixg",
+        "shots": "shots",
+        "toi_seconds": "toi_seconds",
+        "onice_xgf": "onice_xgf",
+        "onice_xga": "onice_xga"
+      },
+      "mapping_verified": true,
+      "toi_unit": "seconds",
+      "game_type_values": [
+        "2"
+      ],
+      "strength_values": {
+        "all": "all",
+        "5on5": "5on5"
+      },
+      "home_away_values": {
+        "HOME": "home",
+        "AWAY": "away"
+      },
+      "score_basis": "before_shootout"
+    },
+    "goalies": {
+      "path": "goalies.csv",
+      "url": null,
+      "retrieved_at": "2026-10-12T00:00:00Z",
+      "mapping": {
+        "season": "season",
+        "game_id": "game_id",
+        "player_id": "player_id",
+        "name": "name",
+        "team": "team",
+        "game_type": "game_type",
+        "strength": "strength",
+        "xga": "xga",
+        "ga": "ga",
+        "shots_against": "shots_against",
+        "saves": "saves",
+        "toi_seconds": "toi_seconds"
+      },
+      "mapping_verified": true,
+      "toi_unit": "seconds",
+      "game_type_values": [
+        "2"
+      ],
+      "strength_values": {
+        "all": "all",
+        "5on5": "5on5"
+      },
+      "home_away_values": {
+        "HOME": "home",
+        "AWAY": "away"
+      },
+      "score_basis": "before_shootout"
+    }
+  }
+}

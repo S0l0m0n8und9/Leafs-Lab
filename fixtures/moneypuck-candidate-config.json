@@ -1,0 +1,103 @@
+{
+  "data_mode": "real",
+  "requested_seasons": [
+    "20232024",
+    "20242025",
+    "20252026",
+    "20262027"
+  ],
+  "sources": {
+    "teams": {
+      "path": "/replace-with-checked-raw-input/teams.csv",
+      "url": "https://moneypuck.com/moneypuck/playerData/careers/gameByGame/all_teams.csv",
+      "mapping_verified": false,
+      "toi_unit": "seconds",
+      "strength_values": {
+        "all": "all",
+        "5on5": "5on5",
+        "5on4": null,
+        "4on5": null,
+        "other": null
+      },
+      "mapping": {
+        "season": "season",
+        "game_id": "gameId",
+        "date": "gameDate",
+        "team": "team",
+        "opponent": "opposingTeam",
+        "home_away": "home_or_away",
+        "strength": "situation",
+        "xgf": "xGoalsFor",
+        "xga": "xGoalsAgainst",
+        "gf": "goalsFor",
+        "ga": "goalsAgainst",
+        "shots_for": "shotsOnGoalFor",
+        "shots_against": "shotsOnGoalAgainst",
+        "toi_seconds": "iceTime"
+      },
+      "home_away_values": {
+        "HOME": "home",
+        "AWAY": "away"
+      },
+      "score_basis": "before_shootout",
+      "game_type_from_id": true,
+      "date_format": "YYYYMMDD"
+    },
+    "skaters": {
+      "path": "/replace-with-checked-raw-input/skaters.csv",
+      "url": "https://moneypuck.com/moneypuck/playerData/teamPlayerGameByGame/2025/regular/skaters/TOR.csv",
+      "mapping_verified": false,
+      "toi_unit": "seconds",
+      "strength_values": {
+        "all": "all",
+        "5on5": "5on5",
+        "5on4": null,
+        "4on5": null,
+        "other": null
+      },
+      "mapping": {
+        "season": "season",
+        "game_id": "gameId",
+        "player_id": "playerId",
+        "name": "name",
+        "position": "position",
+        "team": "team",
+        "strength": "situation",
+        "goals": "I_F_goals",
+        "ixg": "I_F_xGoals",
+        "shots": "I_F_shotsOnGoal",
+        "toi_seconds": "icetime",
+        "onice_xgf": "OnIce_F_xGoals",
+        "onice_xga": "OnIce_A_xGoals"
+      },
+      "game_type_from_id": true
+    },
+    "goalies": {
+      "path": "/replace-with-checked-raw-input/goalies.csv",
+      "url": "https://moneypuck.com/moneypuck/playerData/teamPlayerGameByGame/2025/regular/goalies/TOR.csv",
+      "mapping_verified": false,
+      "toi_unit": "seconds",
+      "strength_values": {
+        "all": "all",
+        "5on5": "5on5",
+        "5on4": null,
+        "4on5": null,
+        "other": null
+      },
+      "mapping": {
+        "season": "season",
+        "game_id": "gameId",
+        "player_id": "playerId",
+        "name": "name",
+        "team": "team",
+        "strength": "situation",
+        "xga": "xGoals",
+        "ga": "goals",
+        "shots_against": "ongoal",
+        "saves": "saves",
+        "toi_seconds": "icetime"
+      },
+      "game_type_from_id": true
+    }
+  }
+}

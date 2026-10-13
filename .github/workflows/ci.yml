@@ -1,0 +1,52 @@
+name: Validate Leafs Lab
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: python3 -m unittest discover -s tests -v
+      - run: npm ci
+      - run: npm test
+      - run: npm run typecheck
+      - run: npm run build
+      - name: Archive validated static snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: leafs-lab-dist
+          path: dist/
+          if-no-files-found: error
+  source-availability:
+    # Independent, non-blocking public-source evidence. Core checks above retain
+    # their normal failure status. This never imports or publishes a snapshot.
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Probe provider-listed TOR CSV availability
+        run: python3 scripts/probe_sources.py --output .source-probe/receipt.json
+      - name: Archive small source-validation receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: leafs-lab-source-validation
+          path: .source-probe/receipt.json
+          include-hidden-files: true
+          if-no-files-found: warn

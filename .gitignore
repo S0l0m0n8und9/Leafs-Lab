@@ -1,0 +1,13 @@
+node_modules/
+dist/
+__pycache__/
+*.pyc
+.venv/
+data/raw/
+*.duckdb
+.superpowers/
+.sites/
+.test-build/
+real-config.json
+.source-probe/
+.refresh/
