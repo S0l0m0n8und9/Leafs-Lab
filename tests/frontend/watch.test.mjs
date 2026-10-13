@@ -36,7 +36,7 @@ test('default watch guide exposes three current-season questions and inspectable
     '39.4–42.5%',
   ])
     assert.ok(html.includes(value), value);
-  assert.equal((html.match(/<details/g) || []).length, 3);
+  assert.equal((html.match(/<details/g) || []).length, 4);
   assert.doesNotMatch(html, /<legend>Strength<\/legend>/);
   assert.match(html, /sensitivity check, not a confidence interval/);
   assert.match(html, /shared outcomes/);

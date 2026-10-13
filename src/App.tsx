@@ -8,12 +8,13 @@ import Games from './views/Games.js';
 import Players from './views/Players.js';
 import Trends from './views/Trends.js';
 import Methodology from './views/Methodology.js';
+import MetricHelp from './components/MetricHelp.js';
 const views: { id: View; label: string }[] = [
   { id: 'watch', label: 'Watch guide' },
   { id: 'games', label: 'Games' },
   { id: 'players', label: 'Player form' },
   { id: 'trends', label: 'Season trends' },
-  { id: 'methodology', label: 'Methodology' },
+  { id: 'methodology', label: 'How to read it' },
 ];
 export default function App({
   bundle,
@@ -191,6 +192,7 @@ export default function App({
           </p>
         )}
         <main id="content" tabIndex={-1} key={route.view}>
+          {route.view !== 'methodology' && <MetricHelp view={route.view} />}
           {route.view === 'methodology' ? (
             <Methodology bundle={bundle} />
           ) : !season ? (
