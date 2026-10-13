@@ -2,7 +2,7 @@
 
 An independent, non-commercial Toronto hockey lab: game reality checks, player form, season trends and a transparent methodology. React + TypeScript + Vite serve one precomputed JSON snapshot. Visitors make no provider requests. No accounts, payments, forecasts, AI inference, official logos or player photography.
 
-**The shipped site uses sample data — illustrative games and players, not actual NHL results.** Two illustrative seasons contain 24 games each with fictional skaters and goalies. The sample warning stays visible in every view and shared link. MoneyPuck is the intended real-data provider; the current fixture is authored locally.
+**The shipped snapshot contains real MoneyPuck Toronto data for the 2025–26 regular season:** 82 games, 1,476 skater game appearances and 91 goalie game appearances, covered through April 15, 2026. The other requested seasons are explicitly marked unavailable. The snapshot is a static extract, not a live feed; the Site does not refresh automatically.
 
 ## Run and validate
 
@@ -41,20 +41,17 @@ Regenerate the explicit sample (never an automatic real-fetch fallback):
 python3 -m pipeline sample --output public/data/leafs-lab.json
 ```
 
-## Import real CSVs locally
+## Rebuild the real snapshot locally
 
-Local permitted team download attempts returned HTTP 403, but the GitHub runner subsequently downloaded all three Toronto sources with HTTP 200. Original headers and three limited representative rows per source were recorded. The [source acceptance checklist](docs/source-validation.md) records this evidence; full raw-row metric semantics remain unverified. Do not label the real dataset accepted until at least three TOR games and three player rows have been checked against the original inputs, including strengths, time units, ID joins and score basis.
+The [source acceptance report](docs/source-validation.md) records complete raw-row reconciliation, verified field mappings, score-basis checks and source hashes for the published 2025–26 snapshot. The URLs in `config/moneypuck-real.json` are the listed MoneyPuck Toronto regular-season team, skater and goalie game CSVs. Preserve source retrieval timestamps and keep raw files outside tracked source. The player URLs cover 2025–26 only; the other requested seasons remain unavailable.
 
-1. Obtain the listed MoneyPuck team/skater/goalie game CSVs through permitted download access. Keep raw files outside tracked source.
-2. Copy `config/moneypuck-real.json` to local `real-config.json` (ignored by git) and add the downloaded file paths. It uses the observed exact headers, explicit player source season, null-safe goalie saves derivation, and a 2025–26 inclusion filter. The player URLs cover this season only; the other requested seasons remain unavailable. Check the full raw rows and provider definitions before setting mapping verification.
-3. Confirm raw unadjusted xGoals, situation mappings, seconds/minutes, regular-season filtering and separate all-strength scores. Set `mapping_verified: true` only for checked sources. Record actual retrieval times; absent timestamps use explicitly labelled local file time.
-4. Generate a candidate without replacing the published snapshot:
+To generate a separate candidate, copy the config to ignored `real-config.json`, add the raw CSV paths, and set the `retrieved_at` timestamp and `retrieved_at_basis` for each downloaded source. Keep the verified mappings unchanged unless a source schema changes. Then run:
 
 ```sh
 python3 -m pipeline import --config real-config.json --output /tmp/leafs-real.json
 ```
 
-Inspect the candidate and original CSV rows. Once the acceptance checks are complete, run:
+Inspect the candidate and original CSV rows. The currently shipped snapshot was generated from the verified source inputs as follows:
 
 ```sh
 python3 -m pipeline import --config real-config.json --output public/data/leafs-lab.json
@@ -76,9 +73,9 @@ Import/download failure preserves the prior output, with no silent sample fallba
 
 `.github/workflows/ci.yml` runs Python tests, frontend tests, typecheck and the production build, then uploads `dist/` as an inspectable artifact.
 
-On push, an independent non-blocking source-availability job runs `scripts/probe_sources.py` against three provider-listed TOR CSVs. It prints HTTP outcomes and original CSV headers, plus one field-limited representative row from each of the latest three distinct 2025-season TOR all-strength games when identifiable. Player names and other fields are excluded. A small JSON receipt is uploaded as `leafs-lab-source-validation`; raw CSVs are never committed. This checks GitHub runner access despite local HTTP 403 and does not establish verified semantic mappings, switch data mode, or refresh/publish the app. Its failures cannot mask the core validation/build job. The first hosted runner receipt confirms HTTP 200 for all three sources and the recorded headers; full raw-row semantic review remains outstanding.
+On push, an independent non-blocking source-availability job runs `scripts/probe_sources.py` against three provider-listed TOR CSVs. It prints HTTP outcomes and original CSV headers, plus one field-limited representative row from each of the latest three distinct 2025-season TOR all-strength games when identifiable. Player names and other fields are excluded. A small JSON receipt is uploaded as `leafs-lab-source-validation`; raw CSVs are never committed. This checks GitHub runner access despite local HTTP 403 and does not itself establish semantic mappings, switch data mode, or refresh/publish the app. Its failures cannot mask the core validation/build job. The first hosted runner receipt confirms HTTP 200 for all three sources and the recorded headers. Full-file semantic review and the row reconciliation are documented in `docs/source-validation.md`.
 
-`.github/workflows/real-data-candidate.yml` runs on push or manual dispatch, downloads with `config/moneypuck-real.json`, and uploads a separate structurally validated candidate plus original CSVs as `leafs-lab-real-candidate` (three-day retention). Partial raw files are uploaded after failures when available. All mappings remain explicitly unverified until the original-row acceptance checks are complete. This workflow never replaces the shipped snapshot, publishes the Site, writes to git or changes the refresh gate.
+`.github/workflows/real-data-candidate.yml` runs on push or manual dispatch, downloads with the verified config, and uploads a separate candidate plus original CSVs as `leafs-lab-real-candidate` (three-day retention). Partial raw files are uploaded after failures when available. This workflow never replaces the shipped snapshot, publishes the Site, writes to git or changes the refresh gate.
 
 To run this source-only probe from a permitted network:
 
@@ -86,9 +83,9 @@ To run this source-only probe from a permitted network:
 python3 scripts/probe_sources.py --output /tmp/leafs-source-receipt.json
 ```
 
-`.github/workflows/refresh.yml` prepares daily refresh at **11:17 UTC** and manual `workflow_dispatch`. Its data job is **gated off by default**: both scheduled and manual jobs skip unless repository variable `LEAFS_REAL_DATA_VALIDATED` is exactly `true`. No scheduled job tries the null/unverified candidate configuration. No unattended refresh is currently installed or enabled in this environment.
+`.github/workflows/refresh.yml` prepares daily refresh at **11:17 UTC** and manual `workflow_dispatch`. Its data job is **gated off by default**: both scheduled and manual jobs skip unless repository variable `LEAFS_REAL_DATA_VALIDATED` is exactly `true`. Both scheduled and manual runs remain disabled while that variable is unset. No unattended refresh is currently installed or enabled in this environment.
 
-Before enabling it, complete real acceptance, commit a portable checked configuration (suggested `config/moneypuck-real.json`) containing listed HTTPS MoneyPuck URLs and all `mapping_verified: true`, and set `LEAFS_REAL_CONFIG_PATH` if using another path. Do not commit private raw files or credentials. Enable `LEAFS_REAL_DATA_VALIDATED=true` only after the real checks; the manual input can choose a checked repository configuration path. Disable that variable if mappings or access cease to be valid.
+Real-data field mappings are verified for the checked 2025–26 inputs, and `config/moneypuck-real.json` is the portable checked configuration. Do not commit raw files or credentials. The variable `LEAFS_REAL_DATA_VALIDATED` remains unset, so unattended data downloads remain gated off; the user-facing Site is still a static snapshot.
 
 The refresh downloads to a separate candidate, validates the frontend contract, runs the checks/build, and uploads a validated JSON/build artifact. Errors produce no published artifact and never deploy over the previous hosted snapshot. The workflow has read-only repository permissions and does not commit output or publish to Sites.
 

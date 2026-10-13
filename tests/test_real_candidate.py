@@ -53,6 +53,12 @@ class RealCandidateTests(unittest.TestCase):
         self.assertEqual(goalie['saves'], 35)
         self.assertEqual(goalie['xga'], 3.544)
         self.assertEqual(goalie['toi_seconds'], 3488)
+        self.assertTrue(all(source['mapping_status'] == 'verified' for source in bundle['sources']))
+
+    def test_unchecked_mappings_remain_unverified(self):
+        for source in self.config['sources'].values():
+            source['mapping_verified'] = False
+        bundle = self.bundle()
         self.assertTrue(all(source['mapping_status'] == 'unverified' for source in bundle['sources']))
 
     def test_source_constant_rejects_game_id_year_mismatch(self):

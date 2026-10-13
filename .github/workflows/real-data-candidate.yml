@@ -1,4 +1,4 @@
-name: Prepare unverified real-data candidate
+name: Prepare real-data candidate
 on:
   push:
   workflow_dispatch:
@@ -17,9 +17,9 @@ jobs:
         with:
           python-version: '3.12'
       - run: python3 -m unittest discover -s tests -v
-      - name: Download and structurally validate the unverified candidate
+      - name: Download and validate the real-data candidate
         run: python3 -m pipeline download --config config/moneypuck-real.json --raw-dir .refresh/raw --output .refresh/leafs-lab.json
-      - name: Preserve candidate and original CSVs for semantic inspection
+      - name: Preserve candidate and original CSVs for audit
         if: always()
         uses: actions/upload-artifact@v4
         with:

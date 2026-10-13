@@ -28,7 +28,7 @@
         "shots_against": "shotsOnGoalAgainst",
         "toi_seconds": "iceTime"
       },
-      "mapping_verified": false,
+      "mapping_verified": true,
       "toi_unit": "seconds",
       "game_type_from_id": true,
       "strength_values": {
@@ -61,7 +61,7 @@
         "onice_xgf": "OnIce_F_xGoals",
         "onice_xga": "OnIce_A_xGoals"
       },
-      "mapping_verified": false,
+      "mapping_verified": true,
       "toi_unit": "seconds",
       "game_type_from_id": true,
       "strength_values": {
@@ -86,7 +86,7 @@
         "shots_against": "ongoal",
         "toi_seconds": "icetime"
       },
-      "mapping_verified": false,
+      "mapping_verified": true,
       "toi_unit": "seconds",
       "game_type_from_id": true,
       "strength_values": {
