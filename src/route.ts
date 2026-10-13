@@ -1,6 +1,6 @@
 import type { Bundle, Strength } from './data.js';
 import { chronological } from './analytics.js';
-export type View='games'|'players'|'trends'|'methodology';
+export type View='watch'|'games'|'players'|'trends'|'methodology';
 export interface Route { view:View; season:string; fallbackSeason:string; strength:Strength; game:string; player:string; window:5|10|20; search:string; sort:string; direction:'asc'|'desc' }
 export const sortKeys=['appearances','goals','ixg','difference','shots','minutes','ixg60','goals60','oniceShare'] as const;
 export function parseRoute(hash:string,bundle:Bundle):Route {
@@ -13,7 +13,7 @@ export function parseRoute(hash:string,bundle:Bundle):Route {
   const savedFallback=season?.id===latest?.id?bundle.seasons.find(s=>s.id===p.get('fallbackSeason')&&!s.games.length):undefined;
   const fallbackSeason=emptySelection?.id??savedFallback?.id??'';
   const games=season?chronological(season.games):[], game=games.find(g=>g.id===p.get('game'))??games.at(-1);
-  return {view:(['games','players','trends','methodology'].includes(page)?page:'games') as View,season:season?.id??'',fallbackSeason,strength:p.get('strength')==='all'?'all':'5on5',game:game?.id??'',player:p.get('player')??'',window:([5,10,20].includes(Number(p.get('window')))?Number(p.get('window')):10) as 5|10|20,search:p.get('search')??'',sort:sortKeys.includes(p.get('sort') as typeof sortKeys[number])?p.get('sort')!:'ixg60',direction:p.get('direction')==='asc'?'asc':'desc'};
+  return {view:(['watch','games','players','trends','methodology'].includes(page)?page:'watch') as View,season:season?.id??'',fallbackSeason,strength:p.get('strength')==='all'?'all':'5on5',game:game?.id??'',player:p.get('player')??'',window:([5,10,20].includes(Number(p.get('window')))?Number(p.get('window')):10) as 5|10|20,search:p.get('search')??'',sort:sortKeys.includes(p.get('sort') as typeof sortKeys[number])?p.get('sort')!:'ixg60',direction:p.get('direction')==='asc'?'asc':'desc'};
 }
 export function changeRoute(route:Route,changes:Partial<Route>,bundle:Bundle):Route {
   const next={...route,...changes};

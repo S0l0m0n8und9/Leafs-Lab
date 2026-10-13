@@ -1,8 +1,8 @@
 # Leafs Lab
 
-An independent, non-commercial Toronto hockey lab: game reality checks, player form, season trends and a transparent methodology. React + TypeScript + Vite serve one precomputed JSON snapshot. Visitors make no provider requests. No accounts, payments, forecasts, AI inference, official logos or player photography.
+An independent, non-commercial Toronto hockey lab: a current-game watch guide, game reality checks, player form, season trends and a transparent methodology. React + TypeScript + Vite serve one precomputed JSON snapshot. Visitors make no provider requests. No accounts, payments, forecasts, AI inference, official logos or player photography.
 
-**The shipped snapshot contains real MoneyPuck Toronto data for the 2025–26 regular season:** 82 games, 1,476 skater game appearances and 91 goalie game appearances, covered through April 15, 2026. The other requested seasons are explicitly marked unavailable. The snapshot is a static extract, not a live feed; the Site does not refresh automatically.
+**The shipped snapshot contains real MoneyPuck Toronto data for the 2026–27 regular season:** six games, 108 skater game appearances and six goalie game appearances, covered through October 10, 2026 and downloaded October 13. Only current-season participants are shown. The snapshot is a static extract, not a live feed; the Site does not refresh automatically.
 
 ## Run and validate
 
@@ -43,7 +43,7 @@ python3 -m pipeline sample --output public/data/leafs-lab.json
 
 ## Rebuild the real snapshot locally
 
-The [source acceptance report](docs/source-validation.md) records complete raw-row reconciliation, verified field mappings, score-basis checks and source hashes for the published 2025–26 snapshot. The URLs in `config/moneypuck-real.json` are the listed MoneyPuck Toronto regular-season team, skater and goalie game CSVs. Preserve source retrieval timestamps and keep raw files outside tracked source. The player URLs cover 2025–26 only; the other requested seasons remain unavailable.
+The [source acceptance report](docs/source-validation.md) records complete raw-row reconciliation, verified field mappings, score-basis checks and source hashes for the earlier 2025–26 snapshot. The URLs in `config/moneypuck-real.json` are the listed MoneyPuck Toronto regular-season team, skater and goalie game CSVs. Preserve source retrieval timestamps and keep raw files outside tracked source. The player URLs and included/requested season now cover 2026–27. The [current-season proof](analysis/current-season-proof.md) records the current source hashes, primary-strength reconciliation and the unsupported player `other` partitions.
 
 To generate a separate candidate, copy the config to ignored `real-config.json`, add the raw CSV paths, and set the `retrieved_at` timestamp and `retrieved_at_basis` for each downloaded source. Keep the verified mappings unchanged unless a source schema changes. Then run:
 
@@ -85,7 +85,7 @@ python3 scripts/probe_sources.py --output /tmp/leafs-source-receipt.json
 
 `.github/workflows/refresh.yml` prepares daily refresh at **11:17 UTC** and manual `workflow_dispatch`. Its data job is **gated off by default**: both scheduled and manual jobs skip unless repository variable `LEAFS_REAL_DATA_VALIDATED` is exactly `true`. Both scheduled and manual runs remain disabled while that variable is unset. No unattended refresh is currently installed or enabled in this environment.
 
-Real-data field mappings are verified for the checked 2025–26 inputs, and `config/moneypuck-real.json` is the portable checked configuration. Do not commit raw files or credentials. The variable `LEAFS_REAL_DATA_VALIDATED` remains unset, so unattended data downloads remain gated off; the user-facing Site is still a static snapshot.
+Real-data field mappings are verified for the checked 2026–27 inputs, and `config/moneypuck-real.json` is the portable checked configuration. Do not commit raw files or credentials. The variable `LEAFS_REAL_DATA_VALIDATED` remains unset, so unattended data downloads remain gated off; the user-facing Site is still a static snapshot.
 
 The refresh downloads to a separate candidate, validates the frontend contract, runs the checks/build, and uploads a validated JSON/build artifact. Errors produce no published artifact and never deploy over the previous hosted snapshot. The workflow has read-only repository permissions and does not commit output or publish to Sites.
 
@@ -93,6 +93,14 @@ The refresh downloads to a separate candidate, validates the frontend contract, 
 
 ## Navigation and access
 
-Shared hash URLs retain view, season, strength, game/player selection, window, player search, numeric sort and order across reload/back navigation. The initial view opens the latest available completed game. Missing selected strengths stay unavailable. Charts have expandable accessible data tables; form tables support horizontal scrolling within their own region. Every control has a visible label and keyboard focus style.
+Shared hash URLs retain view, season, strength, game/player selection, window, player search, numeric sort and order across reload/back navigation. The initial view opens the current-season Watch guide; existing game, player, trend and methodology deep links remain available. Missing selected strengths stay unavailable. Charts have expandable accessible data tables; form tables support horizontal scrolling within their own region. Every control has a visible label and keyboard focus style.
 
 Data: [MoneyPuck.com](https://moneypuck.com/data.htm). Definitions: [MoneyPuck glossary](https://moneypuck.com/glossary.htm). This project is not affiliated with the Toronto Maple Leafs, NHL or MoneyPuck.
+
+## Current-game companion
+
+The Watch guide puts three questions ahead of the numbers: attack quality versus shot volume, Bobrovsky’s strength-specific results, and Marchenko’s chance creation beyond goals. Each card includes a watch prompt, expandable numerical evidence, limits and links to the corresponding current game or player report. Player links use a ten-team-game window so all six available appearances are included. Guide figures carry fixed strength labels; the report strength switch does not apply to the guide.
+
+`src/watchSnapshot.ts` is the selected machine-readable companion to `analysis/current-proof-results.json`. Its facts are pinned to the exact original source hashes, season, game identifiers and covered-through date. If a candidate replaces the dataset without updating the verified guide, the guide suppresses its findings and directs visitors to available reports. Regenerate and review the proof and selected companion when refreshing coverage; deploying a new raw snapshot alone does not refresh the interpretation.
+
+The six-game analysis is descriptive. Leave-one-game-out shares are a sensitivity check, not a confidence interval; shared on-ice outcomes are not isolated player impact; raw xG cannot establish coaching causation. The model and data are credited to MoneyPuck. The extra value is the cross-metric questions and linked, inspectable current-game evidence, rather than a new xG model or a forecast.

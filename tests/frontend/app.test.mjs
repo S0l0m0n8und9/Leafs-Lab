@@ -10,7 +10,7 @@ import {validateBundle,sourceTimeLabel} from '../../.test-build/data.js';
 
 test('shareable links retain view, season, strength, details and form controls',()=>{const hash='#players?season=20242025&strength=all&game=2024020001&player=100&window=5&search=Finn%20Frost&sort=goals&direction=asc';const route=parseRoute(hash,bundle);assert.equal(route.view,'players');assert.equal(route.season,'20242025');assert.equal(route.strength,'all');assert.equal(route.player,'100');assert.equal(route.window,5);assert.equal(route.search,'Finn Frost');assert.deepEqual(parseRoute(routeHash(route),bundle),route);});
 test('initial selection is latest populated season and latest completed game',()=>{const route=parseRoute('',bundle);assert.equal(route.season,bundle.seasons.at(-1).id);assert.equal(route.game,bundle.seasons.at(-1).games.at(-1).id);assert.equal(route.strength,'5on5');});
-test('invalid links and an empty selected season fall back to usable controls',()=>{const b=structuredClone(bundle);b.seasons.push({id:'20262027',label:'2026–27',games:[],skaters:[],goalies:[]});const route=parseRoute('#invalid?season=20262027&strength=bogus&window=7',b);assert.equal(route.view,'games');assert.equal(route.season,'20252026');assert.equal(route.window,10);assert.equal(route.strength,'5on5');});
+test('invalid links and an empty selected season fall back to usable controls',()=>{const b=structuredClone(bundle);b.seasons.push({id:'20262027',label:'2026–27',games:[],skaters:[],goalies:[]});const route=parseRoute('#invalid?season=20262027&strength=bogus&window=7',b);assert.equal(route.view,'watch');assert.equal(route.season,'20252026');assert.equal(route.window,10);assert.equal(route.strength,'5on5');});
 const withEmptySeason = () => {
   const data = structuredClone(bundle);
   data.seasons.push({id:'20262027',label:'2026–27',games:[],skaters:[],goalies:[]});
@@ -27,7 +27,7 @@ test('empty-season fallback keeps a visible explanation in canonical links and o
   assert.match(hash,/fallbackSeason=20262027/);
   const reloaded=parseRoute(hash,data);
   assert.deepEqual(reloaded,route);
-  assert.deepEqual(routing.changeRoute(parseRoute('',data),{season:'20262027',game:''},data),route);
+  assert.deepEqual(routing.changeRoute(parseRoute('#games',data),{season:'20262027',game:''},data),route);
   assert.equal(routing.changeRoute(reloaded,{strength:'all'},data).fallbackSeason,'20262027');
   const html=renderToStaticMarkup(React.createElement(App,{bundle:data,initialRoute:reloaded}));
   assert.match(html,/The requested season has no available games/);

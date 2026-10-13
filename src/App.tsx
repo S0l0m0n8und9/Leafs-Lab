@@ -3,11 +3,13 @@ import type { Bundle } from './data.js';
 import type { Route, View } from './route.js';
 import { changeRoute, parseRoute, routeHash, subscribeRoute } from './route.js';
 import { SourceMeta, Empty } from './components/common.js';
+import Watch from './views/Watch.js';
 import Games from './views/Games.js';
 import Players from './views/Players.js';
 import Trends from './views/Trends.js';
 import Methodology from './views/Methodology.js';
 const views: { id: View; label: string }[] = [
+  { id: 'watch', label: 'Watch guide' },
   { id: 'games', label: 'Games' },
   { id: 'players', label: 'Player form' },
   { id: 'trends', label: 'Season trends' },
@@ -84,7 +86,7 @@ export default function App({
       )}
       <header className="site-header">
         <div className="masthead">
-          <a className="brand" href={routeHash({ ...route, view: 'games' })}>
+          <a className="brand" href={routeHash({ ...route, view: 'watch' })}>
             <span className="brand-mark" aria-hidden="true">
               LL
               <span />
@@ -145,23 +147,25 @@ export default function App({
               )}
             </select>
           </label>
-          <fieldset>
-            <legend>Strength</legend>
-            <div className="segmented strength-switch">
-              <button
-                aria-pressed={route.strength === '5on5'}
-                onClick={() => update({ strength: '5on5' })}
-              >
-                5-on-5
-              </button>
-              <button
-                aria-pressed={route.strength === 'all'}
-                onClick={() => update({ strength: 'all' })}
-              >
-                All strengths
-              </button>
-            </div>
-          </fieldset>
+          {route.view !== 'watch' && (
+            <fieldset>
+              <legend>Strength</legend>
+              <div className="segmented strength-switch">
+                <button
+                  aria-pressed={route.strength === '5on5'}
+                  onClick={() => update({ strength: '5on5' })}
+                >
+                  5-on-5
+                </button>
+                <button
+                  aria-pressed={route.strength === 'all'}
+                  onClick={() => update({ strength: 'all' })}
+                >
+                  All strengths
+                </button>
+              </div>
+            </fieldset>
+          )}
           <p className="snapshot-state">
             <span
               className={'status-dot' + (old ? ' old' : '')}
@@ -197,6 +201,8 @@ export default function App({
                 coverage and provenance.
               </Empty>
             </>
+          ) : route.view === 'watch' ? (
+            <Watch bundle={bundle} season={season} route={route} />
           ) : route.view === 'games' ? (
             <Games
               bundle={bundle}

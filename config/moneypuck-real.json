@@ -1,12 +1,9 @@
 {
   "data_mode": "real",
   "include_seasons": [
-    "20252026"
+    "20262027"
   ],
   "requested_seasons": [
-    "20232024",
-    "20242025",
-    "20252026",
     "20262027"
   ],
   "sources": {
@@ -46,7 +43,7 @@
       "score_basis": "before_shootout"
     },
     "skaters": {
-      "url": "https://moneypuck.com/moneypuck/playerData/teamPlayerGameByGame/2025/regular/skaters/TOR.csv",
+      "url": "https://moneypuck.com/moneypuck/playerData/teamPlayerGameByGame/2026/regular/skaters/TOR.csv",
       "mapping": {
         "game_id": "gameId",
         "team": "playerTeam",
@@ -71,10 +68,10 @@
         "5on4": null,
         "other": null
       },
-      "season_constant": "20252026"
+      "season_constant": "20262027"
     },
     "goalies": {
-      "url": "https://moneypuck.com/moneypuck/playerData/teamPlayerGameByGame/2025/regular/goalies/TOR.csv",
+      "url": "https://moneypuck.com/moneypuck/playerData/teamPlayerGameByGame/2026/regular/goalies/TOR.csv",
       "mapping": {
         "game_id": "gameId",
         "team": "playerTeam",
@@ -96,7 +93,7 @@
         "5on4": null,
         "other": null
       },
-      "season_constant": "20252026",
+      "season_constant": "20262027",
       "derive_saves_from_shots_against_and_ga": true
     }
   }

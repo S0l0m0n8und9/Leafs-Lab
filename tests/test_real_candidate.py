@@ -15,6 +15,12 @@ class RealCandidateTests(unittest.TestCase):
         self.addCleanup(temporary.cleanup)
         self.root = Path(temporary.name)
         self.config = json.loads(Path('config/moneypuck-real.json').read_text())
+        # These adapter fixtures intentionally exercise a historical season;
+        # changing the portable refresh target must not change their joins.
+        self.config['include_seasons'] = ['20252026']
+        self.config['requested_seasons'] = ['20232024', '20242025', '20252026', '20262027']
+        for kind in ('skaters', 'goalies'):
+            self.config['sources'][kind]['season_constant'] = '20252026'
         self.rows = {
             'teams': [dict(team='TOR', season='2025', gameId='2025021304',
                 gameDate='20260415', opposingTeam='OTT', home_or_away='AWAY',
@@ -131,3 +137,16 @@ class RealCandidateTests(unittest.TestCase):
                 self.config['include_seasons'] = value
                 with self.assertRaises(ImportValidationError):
                     self.bundle()
+
+
+class CurrentRefreshConfigTests(unittest.TestCase):
+    def test_portable_refresh_targets_only_current_season(self):
+        config = json.loads(Path('config/moneypuck-real.json').read_text())
+        self.assertEqual(config['include_seasons'], ['20262027'])
+        self.assertEqual(config['requested_seasons'], ['20262027'])
+        for kind, spec in config['sources'].items():
+            self.assertNotIn('path', spec)
+            self.assertNotIn('retrieved_at', spec)
+            if kind != 'teams':
+                self.assertIn('/2026/regular/', spec['url'])
+                self.assertEqual(spec['season_constant'], '20262027')
