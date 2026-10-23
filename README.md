@@ -2,7 +2,7 @@
 
 An independent, non-commercial Toronto hockey lab: a current-game watch guide, game reality checks, player form, season trends and a transparent methodology. React + TypeScript + Vite serve one precomputed JSON snapshot. Visitors make no provider requests. No accounts, payments, forecasts, AI inference, official logos or player photography.
 
-**The shipped snapshot contains real MoneyPuck Toronto data for the 2026–27 regular season:** six games, 108 skater game appearances and six goalie game appearances, covered through October 10, 2026 and downloaded October 13. Only current-season participants are shown. The snapshot is a static extract, not a live feed; the Site does not refresh automatically.
+**The shipped snapshot contains real MoneyPuck Toronto data for the 2026–27 regular season:** 12 games, 216 skater game appearances and 12 goalie game appearances, covered through October 22, 2026 and downloaded October 23 UTC (October 24 in New Zealand). Only current-season participants are shown. The snapshot is a static extract, not a live feed; the Site does not refresh automatically.
 
 ## Run and validate
 
@@ -99,8 +99,10 @@ Data: [MoneyPuck.com](https://moneypuck.com/data.htm). Definitions: [MoneyPuck g
 
 ## Current-game companion
 
-The Watch guide puts three questions ahead of the numbers: attack quality versus shot volume, Bobrovsky’s strength-specific results, and Marchenko’s chance creation beyond goals. Each card includes a watch prompt, expandable numerical evidence, limits and links to the corresponding current game or player report. Player links use a ten-team-game window so all six available appearances are included. Guide figures carry fixed strength labels; the report strength switch does not apply to the guide.
+The Watch guide puts three questions ahead of the numbers: attack quality versus shot volume, Bobrovsky’s strength-specific results, and Marchenko’s consistent chance creation beyond goals. The original Marchenko scoring-drought framing is archived as superseded, with dated NHL evidence. Each active card includes a watch prompt, expandable numerical evidence, limits and links to game or player reports. Marchenko’s guide includes all 12 games individually; player-report links use the latest ten-team-game window. Guide figures carry fixed strength labels; the report strength switch does not apply to the guide.
 
 `src/watchSnapshot.ts` is the selected machine-readable companion to `analysis/current-proof-results.json`. Its facts are pinned to the exact original source hashes, season, game identifiers and covered-through date. If a candidate replaces the dataset without updating the verified guide, the guide suppresses its findings and directs visitors to available reports. Regenerate and review the proof and selected companion when refreshing coverage; deploying a new raw snapshot alone does not refresh the interpretation.
 
-The six-game analysis is descriptive. Leave-one-game-out shares are a sensitivity check, not a confidence interval; shared on-ice outcomes are not isolated player impact; raw xG cannot establish coaching causation. The model and data are credited to MoneyPuck. The extra value is the cross-metric questions and linked, inspectable current-game evidence, rather than a new xG model or a forecast.
+The current-season analysis is descriptive. Leave-one-game-out shares are a sensitivity check, not a confidence interval; shared on-ice outcomes are not isolated player impact; raw xG cannot establish coaching causation. The model and data are credited to MoneyPuck. The extra value is the cross-metric questions and linked, inspectable current-game evidence, rather than a new xG model or a forecast.
+
+After a verified download, regenerate both the reports and watch companion with `python3 scripts/refresh_watch.py --raw-dir <download-directory> --bundle <candidate-json>`. This checks original CSV hashes and reconciles current-season inputs before replacing the tracked outputs. Regenerate the optional analysis chart with `python3 analysis/current_game_proof.py --plot`. Review the Watch narrative whenever coverage changes; it must describe the new calculations.

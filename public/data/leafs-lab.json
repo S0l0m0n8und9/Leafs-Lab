@@ -1,38 +1,38 @@
 {
   "schema_version": 1,
   "data_mode": "real",
-  "generated_at": "2026-10-13T10:31:27Z",
+  "generated_at": "2026-10-23T21:25:50Z",
   "sources": [
     {
       "kind": "goalies",
       "url": "https://moneypuck.com/moneypuck/playerData/teamPlayerGameByGame/2026/regular/goalies/TOR.csv",
-      "retrieved_at": "2026-10-13T10:18:38Z",
+      "retrieved_at": "2026-10-23T21:25:49Z",
       "retrieved_at_basis": "downloaded",
-      "hash": "sha256:7d392c1aa8aa3a7ed72d7d3e46c375e194fa6ad207ec8a9c1a00741476f69435",
+      "hash": "sha256:6cb5bb918daeafb2c2ea542a9ed71cd7f6bc77d8dda6f70d7e4b3f18723c20eb",
       "validation_status": "schema_validated",
       "mapping_status": "verified"
     },
     {
       "kind": "skaters",
       "url": "https://moneypuck.com/moneypuck/playerData/teamPlayerGameByGame/2026/regular/skaters/TOR.csv",
-      "retrieved_at": "2026-10-13T10:18:38Z",
+      "retrieved_at": "2026-10-23T21:25:43Z",
       "retrieved_at_basis": "downloaded",
-      "hash": "sha256:a211f3c2478113e47c9005f254be6bd03c6c7b69034ed45dbbd44601e6be4921",
+      "hash": "sha256:006585c73cb019d6510a15044e0c9df26e8fc4604d0d9caf9f707c75d30dc156",
       "validation_status": "schema_validated",
       "mapping_status": "verified"
     },
     {
       "kind": "teams",
       "url": "https://moneypuck.com/moneypuck/playerData/careers/gameByGame/regular/teams/TOR.csv",
-      "retrieved_at": "2026-10-13T10:18:38Z",
+      "retrieved_at": "2026-10-23T21:25:36Z",
       "retrieved_at_basis": "downloaded",
-      "hash": "sha256:1e88e24f39180a90f547e4bdebe7d013cd2a109976aebc78a4ed8b218e972661",
+      "hash": "sha256:c188b454bcbd0a3abcf94ff28dfd1c57d5fba99ad0853048ee75b2db6fdd305b",
       "validation_status": "schema_validated",
       "mapping_status": "verified"
     }
   ],
   "coverage": {
-    "max_game_date": "2026-10-10",
+    "max_game_date": "2026-10-22",
     "unavailable_seasons": []
   },
   "seasons": [
@@ -141,7 +141,7 @@
           "score_against": 4.0,
           "stats": {
             "all": {
-              "xgf": 4.696,
+              "xgf": 4.549,
               "xga": 3.917,
               "gf": 5.0,
               "ga": 4.0,
@@ -217,6 +217,186 @@
               "shots_for": 19.0,
               "shots_against": 22.0,
               "toi_seconds": 2638.0
+            }
+          }
+        },
+        {
+          "id": "2026020102",
+          "date": "2026-10-13",
+          "opponent": "UTA",
+          "home_away": "away",
+          "score_basis": "before_shootout",
+          "result": "loss",
+          "score_for": 4.0,
+          "score_against": 5.0,
+          "stats": {
+            "all": {
+              "xgf": 3.015,
+              "xga": 2.456,
+              "gf": 4.0,
+              "ga": 5.0,
+              "shots_for": 26.0,
+              "shots_against": 28.0,
+              "toi_seconds": 3600.0
+            },
+            "5on5": {
+              "xgf": 1.097,
+              "xga": 1.575,
+              "gf": 1.0,
+              "ga": 4.0,
+              "shots_for": 12.0,
+              "shots_against": 21.0,
+              "toi_seconds": 2738.0
+            }
+          }
+        },
+        {
+          "id": "2026020108",
+          "date": "2026-10-15",
+          "opponent": "BUF",
+          "home_away": "home",
+          "score_basis": "before_shootout",
+          "result": "loss",
+          "score_for": 4.0,
+          "score_against": 5.0,
+          "stats": {
+            "all": {
+              "xgf": 2.968,
+              "xga": 3.098,
+              "gf": 4.0,
+              "ga": 5.0,
+              "shots_for": 30.0,
+              "shots_against": 35.0,
+              "toi_seconds": 3794.0
+            },
+            "5on5": {
+              "xgf": 2.281,
+              "xga": 1.84,
+              "gf": 3.0,
+              "ga": 4.0,
+              "shots_for": 25.0,
+              "shots_against": 28.0,
+              "toi_seconds": 3370.0
+            }
+          }
+        },
+        {
+          "id": "2026020125",
+          "date": "2026-10-17",
+          "opponent": "NYI",
+          "home_away": "home",
+          "score_basis": "before_shootout",
+          "result": "loss",
+          "score_for": 1.0,
+          "score_against": 4.0,
+          "stats": {
+            "all": {
+              "xgf": 3.343,
+              "xga": 2.254,
+              "gf": 1.0,
+              "ga": 4.0,
+              "shots_for": 29.0,
+              "shots_against": 20.0,
+              "toi_seconds": 3600.0
+            },
+            "5on5": {
+              "xgf": 2.158,
+              "xga": 1.637,
+              "gf": 1.0,
+              "ga": 3.0,
+              "shots_for": 19.0,
+              "shots_against": 17.0,
+              "toi_seconds": 2969.0
+            }
+          }
+        },
+        {
+          "id": "2026020139",
+          "date": "2026-10-19",
+          "opponent": "SJS",
+          "home_away": "home",
+          "score_basis": "before_shootout",
+          "result": "win",
+          "score_for": 3.0,
+          "score_against": 1.0,
+          "stats": {
+            "all": {
+              "xgf": 4.513,
+              "xga": 3.812,
+              "gf": 3.0,
+              "ga": 1.0,
+              "shots_for": 32.0,
+              "shots_against": 31.0,
+              "toi_seconds": 3600.0
+            },
+            "5on5": {
+              "xgf": 1.879,
+              "xga": 3.1,
+              "gf": 0.0,
+              "ga": 1.0,
+              "shots_for": 22.0,
+              "shots_against": 27.0,
+              "toi_seconds": 2607.0
+            }
+          }
+        },
+        {
+          "id": "2026020145",
+          "date": "2026-10-20",
+          "opponent": "CBJ",
+          "home_away": "away",
+          "score_basis": "before_shootout",
+          "result": "win",
+          "score_for": 6.0,
+          "score_against": 2.0,
+          "stats": {
+            "all": {
+              "xgf": 2.77,
+              "xga": 3.441,
+              "gf": 6.0,
+              "ga": 2.0,
+              "shots_for": 22.0,
+              "shots_against": 37.0,
+              "toi_seconds": 3600.0
+            },
+            "5on5": {
+              "xgf": 1.203,
+              "xga": 2.147,
+              "gf": 4.0,
+              "ga": 2.0,
+              "shots_for": 14.0,
+              "shots_against": 24.0,
+              "toi_seconds": 2500.0
+            }
+          }
+        },
+        {
+          "id": "2026020155",
+          "date": "2026-10-22",
+          "opponent": "NYR",
+          "home_away": "home",
+          "score_basis": "before_shootout",
+          "result": "win",
+          "score_for": 5.0,
+          "score_against": 4.0,
+          "stats": {
+            "all": {
+              "xgf": 2.973,
+              "xga": 1.987,
+              "gf": 5.0,
+              "ga": 4.0,
+              "shots_for": 35.0,
+              "shots_against": 25.0,
+              "toi_seconds": 3600.0
+            },
+            "5on5": {
+              "xgf": 2.519,
+              "xga": 1.788,
+              "gf": 4.0,
+              "ga": 4.0,
+              "shots_for": 30.0,
+              "shots_against": 23.0,
+              "toi_seconds": 3227.0
             }
           }
         }
@@ -1526,10 +1706,10 @@
           "stats": {
             "all": {
               "goals": 1.0,
-              "ixg": 0.712,
+              "ixg": 0.564,
               "shots": 6.0,
               "toi_seconds": 1126.0,
-              "onice_xgf": 1.738,
+              "onice_xgf": 1.591,
               "onice_xga": 1.349
             },
             "5on5": {
@@ -1721,7 +1901,7 @@
               "ixg": 0.694,
               "shots": 1.0,
               "toi_seconds": 1368.0,
-              "onice_xgf": 2.522,
+              "onice_xgf": 2.374,
               "onice_xga": 0.851
             },
             "5on5": {
@@ -1745,7 +1925,7 @@
               "ixg": 0.109,
               "shots": 2.0,
               "toi_seconds": 1551.0,
-              "onice_xgf": 2.53,
+              "onice_xgf": 2.383,
               "onice_xga": 0.687
             },
             "5on5": {
@@ -1793,7 +1973,7 @@
               "ixg": 0.442,
               "shots": 4.0,
               "toi_seconds": 1509.0,
-              "onice_xgf": 2.903,
+              "onice_xgf": 2.756,
               "onice_xga": 0.689
             },
             "5on5": {
@@ -1889,7 +2069,7 @@
               "ixg": 0.733,
               "shots": 3.0,
               "toi_seconds": 1295.0,
-              "onice_xgf": 1.821,
+              "onice_xgf": 1.673,
               "onice_xga": 0.351
             },
             "5on5": {
@@ -2813,6 +2993,2598 @@
               "onice_xga": 0.649
             }
           }
+        },
+        {
+          "game_id": "2026020102",
+          "player_id": "8475166",
+          "name": "John Tavares",
+          "position": "C",
+          "stats": {
+            "all": {
+              "goals": 1.0,
+              "ixg": 0.503,
+              "shots": 3.0,
+              "toi_seconds": 1083.0,
+              "onice_xgf": 1.697,
+              "onice_xga": 0.576
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 701.0,
+              "onice_xgf": 0.14,
+              "onice_xga": 0.576
+            }
+          }
+        },
+        {
+          "game_id": "2026020102",
+          "player_id": "8475171",
+          "name": "Oliver Ekman-Larsson",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.004,
+              "shots": 0.0,
+              "toi_seconds": 1060.0,
+              "onice_xgf": 0.445,
+              "onice_xga": 1.255
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.004,
+              "shots": 0.0,
+              "toi_seconds": 896.0,
+              "onice_xgf": 0.445,
+              "onice_xga": 0.657
+            }
+          }
+        },
+        {
+          "game_id": "2026020102",
+          "player_id": "8476853",
+          "name": "Morgan Rielly",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.131,
+              "shots": 1.0,
+              "toi_seconds": 969.0,
+              "onice_xgf": 0.685,
+              "onice_xga": 0.447
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.131,
+              "shots": 1.0,
+              "toi_seconds": 809.0,
+              "onice_xgf": 0.405,
+              "onice_xga": 0.245
+            }
+          }
+        },
+        {
+          "game_id": "2026020102",
+          "player_id": "8476925",
+          "name": "Colton Sissons",
+          "position": "C",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.004,
+              "shots": 1.0,
+              "toi_seconds": 900.0,
+              "onice_xgf": 0.082,
+              "onice_xga": 0.356
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.004,
+              "shots": 1.0,
+              "toi_seconds": 743.0,
+              "onice_xgf": 0.082,
+              "onice_xga": 0.356
+            }
+          }
+        },
+        {
+          "game_id": "2026020102",
+          "player_id": "8476927",
+          "name": "Teddy Blueger",
+          "position": "C",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.054,
+              "shots": 1.0,
+              "toi_seconds": 705.0,
+              "onice_xgf": 0.173,
+              "onice_xga": 0.563
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.054,
+              "shots": 1.0,
+              "toi_seconds": 503.0,
+              "onice_xgf": 0.173,
+              "onice_xga": 0.331
+            }
+          }
+        },
+        {
+          "game_id": "2026020102",
+          "player_id": "8476931",
+          "name": "Jake McCabe",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 1101.0,
+              "onice_xgf": 0.333,
+              "onice_xga": 0.859
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 873.0,
+              "onice_xgf": 0.253,
+              "onice_xga": 0.627
+            }
+          }
+        },
+        {
+          "game_id": "2026020102",
+          "player_id": "8477426",
+          "name": "Nick Paul",
+          "position": "L",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 841.0,
+              "onice_xgf": 0.396,
+              "onice_xga": 0.841
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 752.0,
+              "onice_xgf": 0.201,
+              "onice_xga": 0.698
+            }
+          }
+        },
+        {
+          "game_id": "2026020102",
+          "player_id": "8477939",
+          "name": "William Nylander",
+          "position": "R",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.542,
+              "shots": 4.0,
+              "toi_seconds": 1309.0,
+              "onice_xgf": 2.094,
+              "onice_xga": 0.932
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.355,
+              "shots": 3.0,
+              "toi_seconds": 866.0,
+              "onice_xgf": 0.422,
+              "onice_xga": 0.629
+            }
+          }
+        },
+        {
+          "game_id": "2026020102",
+          "player_id": "8478178",
+          "name": "Darren Raddysh",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.108,
+              "shots": 3.0,
+              "toi_seconds": 1479.0,
+              "onice_xgf": 1.943,
+              "onice_xga": 1.238
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.05,
+              "shots": 2.0,
+              "toi_seconds": 966.0,
+              "onice_xgf": 0.344,
+              "onice_xga": 0.703
+            }
+          }
+        },
+        {
+          "game_id": "2026020102",
+          "player_id": "8478458",
+          "name": "Jack Roslovic",
+          "position": "C",
+          "stats": {
+            "all": {
+              "goals": 1.0,
+              "ixg": 0.265,
+              "shots": 2.0,
+              "toi_seconds": 1056.0,
+              "onice_xgf": 0.798,
+              "onice_xga": 0.511
+            },
+            "5on5": {
+              "goals": 1.0,
+              "ixg": 0.265,
+              "shots": 2.0,
+              "toi_seconds": 967.0,
+              "onice_xgf": 0.594,
+              "onice_xga": 0.308
+            }
+          }
+        },
+        {
+          "game_id": "2026020102",
+          "player_id": "8479318",
+          "name": "Auston Matthews",
+          "position": "C",
+          "stats": {
+            "all": {
+              "goals": 1.0,
+              "ixg": 0.562,
+              "shots": 4.0,
+              "toi_seconds": 1212.0,
+              "onice_xgf": 2.137,
+              "onice_xga": 0.371
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.148,
+              "shots": 1.0,
+              "toi_seconds": 790.0,
+              "onice_xgf": 0.58,
+              "onice_xga": 0.067
+            }
+          }
+        },
+        {
+          "game_id": "2026020102",
+          "player_id": "8479442",
+          "name": "Troy Stecher",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.009,
+              "shots": 0.0,
+              "toi_seconds": 1010.0,
+              "onice_xgf": 0.61,
+              "onice_xga": 0.607
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.009,
+              "shots": 0.0,
+              "toi_seconds": 799.0,
+              "onice_xgf": 0.53,
+              "onice_xga": 0.464
+            }
+          }
+        },
+        {
+          "game_id": "2026020102",
+          "player_id": "8479520",
+          "name": "Brandon Duhaime",
+          "position": "L",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.059,
+              "shots": 1.0,
+              "toi_seconds": 560.0,
+              "onice_xgf": 0.122,
+              "onice_xga": 0.358
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.017,
+              "shots": 0.0,
+              "toi_seconds": 478.0,
+              "onice_xgf": 0.081,
+              "onice_xga": 0.215
+            }
+          }
+        },
+        {
+          "game_id": "2026020102",
+          "player_id": "8480893",
+          "name": "Kirill Marchenko",
+          "position": "R",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.329,
+              "shots": 2.0,
+              "toi_seconds": 1121.0,
+              "onice_xgf": 2.217,
+              "onice_xga": 0.167
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 721.0,
+              "onice_xgf": 0.58,
+              "onice_xga": 0.167
+            }
+          }
+        },
+        {
+          "game_id": "2026020102",
+          "player_id": "8483546",
+          "name": "Marshall Rifai",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 544.0,
+              "onice_xgf": 0.141,
+              "onice_xga": 0.228
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 511.0,
+              "onice_xgf": 0.026,
+              "onice_xga": 0.228
+            }
+          }
+        },
+        {
+          "game_id": "2026020102",
+          "player_id": "8483565",
+          "name": "Nick Blankenburg",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.009,
+              "shots": 0.0,
+              "toi_seconds": 681.0,
+              "onice_xgf": 0.315,
+              "onice_xga": 0.278
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.009,
+              "shots": 0.0,
+              "toi_seconds": 597.0,
+              "onice_xgf": 0.191,
+              "onice_xga": 0.226
+            }
+          }
+        },
+        {
+          "game_id": "2026020102",
+          "player_id": "8484158",
+          "name": "Easton Cowan",
+          "position": "R",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.175,
+              "shots": 2.0,
+              "toi_seconds": 1015.0,
+              "onice_xgf": 0.493,
+              "onice_xga": 0.991
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.051,
+              "shots": 1.0,
+              "toi_seconds": 861.0,
+              "onice_xgf": 0.328,
+              "onice_xga": 0.557
+            }
+          }
+        },
+        {
+          "game_id": "2026020102",
+          "player_id": "8486067",
+          "name": "Gavin McKenna",
+          "position": "L",
+          "stats": {
+            "all": {
+              "goals": 1.0,
+              "ixg": 0.262,
+              "shots": 2.0,
+              "toi_seconds": 1028.0,
+              "onice_xgf": 0.889,
+              "onice_xga": 0.874
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 857.0,
+              "onice_xgf": 0.112,
+              "onice_xga": 0.823
+            }
+          }
+        },
+        {
+          "game_id": "2026020108",
+          "player_id": "8475166",
+          "name": "John Tavares",
+          "position": "C",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 707.0,
+              "onice_xgf": 0.452,
+              "onice_xga": 0.492
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 599.0,
+              "onice_xgf": 0.09,
+              "onice_xga": 0.492
+            }
+          }
+        },
+        {
+          "game_id": "2026020108",
+          "player_id": "8475171",
+          "name": "Oliver Ekman-Larsson",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 1175.0,
+              "onice_xgf": 1.238,
+              "onice_xga": 0.667
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 1119.0,
+              "onice_xgf": 1.04,
+              "onice_xga": 0.464
+            }
+          }
+        },
+        {
+          "game_id": "2026020108",
+          "player_id": "8476853",
+          "name": "Morgan Rielly",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.048,
+              "shots": 3.0,
+              "toi_seconds": 1115.0,
+              "onice_xgf": 0.278,
+              "onice_xga": 0.83
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.048,
+              "shots": 3.0,
+              "toi_seconds": 1020.0,
+              "onice_xgf": 0.275,
+              "onice_xga": 0.531
+            }
+          }
+        },
+        {
+          "game_id": "2026020108",
+          "player_id": "8476925",
+          "name": "Colton Sissons",
+          "position": "C",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.012,
+              "shots": 0.0,
+              "toi_seconds": 1069.0,
+              "onice_xgf": 0.549,
+              "onice_xga": 0.871
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.012,
+              "shots": 0.0,
+              "toi_seconds": 959.0,
+              "onice_xgf": 0.549,
+              "onice_xga": 0.405
+            }
+          }
+        },
+        {
+          "game_id": "2026020108",
+          "player_id": "8476927",
+          "name": "Teddy Blueger",
+          "position": "C",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.33,
+              "shots": 3.0,
+              "toi_seconds": 883.0,
+              "onice_xgf": 0.377,
+              "onice_xga": 0.609
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.33,
+              "shots": 3.0,
+              "toi_seconds": 781.0,
+              "onice_xgf": 0.377,
+              "onice_xga": 0.143
+            }
+          }
+        },
+        {
+          "game_id": "2026020108",
+          "player_id": "8476931",
+          "name": "Jake McCabe",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 1410.0,
+              "onice_xgf": 0.99,
+              "onice_xga": 1.455
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 1257.0,
+              "onice_xgf": 0.966,
+              "onice_xga": 0.969
+            }
+          }
+        },
+        {
+          "game_id": "2026020108",
+          "player_id": "8477426",
+          "name": "Nick Paul",
+          "position": "L",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.135,
+              "shots": 1.0,
+              "toi_seconds": 1033.0,
+              "onice_xgf": 0.348,
+              "onice_xga": 0.589
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.135,
+              "shots": 1.0,
+              "toi_seconds": 976.0,
+              "onice_xgf": 0.348,
+              "onice_xga": 0.54
+            }
+          }
+        },
+        {
+          "game_id": "2026020108",
+          "player_id": "8477939",
+          "name": "William Nylander",
+          "position": "R",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.539,
+              "shots": 5.0,
+              "toi_seconds": 1338.0,
+              "onice_xgf": 1.688,
+              "onice_xga": 0.973
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.181,
+              "shots": 2.0,
+              "toi_seconds": 1114.0,
+              "onice_xgf": 1.128,
+              "onice_xga": 0.825
+            }
+          }
+        },
+        {
+          "game_id": "2026020108",
+          "player_id": "8478178",
+          "name": "Darren Raddysh",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.071,
+              "shots": 3.0,
+              "toi_seconds": 1629.0,
+              "onice_xgf": 1.71,
+              "onice_xga": 1.284
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.071,
+              "shots": 3.0,
+              "toi_seconds": 1322.0,
+              "onice_xgf": 1.027,
+              "onice_xga": 0.799
+            }
+          }
+        },
+        {
+          "game_id": "2026020108",
+          "player_id": "8478458",
+          "name": "Jack Roslovic",
+          "position": "C",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.356,
+              "shots": 5.0,
+              "toi_seconds": 1144.0,
+              "onice_xgf": 1.049,
+              "onice_xga": 1.262
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.333,
+              "shots": 4.0,
+              "toi_seconds": 1044.0,
+              "onice_xgf": 1.021,
+              "onice_xga": 0.808
+            }
+          }
+        },
+        {
+          "game_id": "2026020108",
+          "player_id": "8479318",
+          "name": "Auston Matthews",
+          "position": "C",
+          "stats": {
+            "all": {
+              "goals": 1.0,
+              "ixg": 0.259,
+              "shots": 1.0,
+              "toi_seconds": 1334.0,
+              "onice_xgf": 1.814,
+              "onice_xga": 1.116
+            },
+            "5on5": {
+              "goals": 1.0,
+              "ixg": 0.259,
+              "shots": 1.0,
+              "toi_seconds": 1077.0,
+              "onice_xgf": 1.128,
+              "onice_xga": 0.808
+            }
+          }
+        },
+        {
+          "game_id": "2026020108",
+          "player_id": "8479442",
+          "name": "Troy Stecher",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.035,
+              "shots": 1.0,
+              "toi_seconds": 1028.0,
+              "onice_xgf": 0.335,
+              "onice_xga": 0.99
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.035,
+              "shots": 1.0,
+              "toi_seconds": 950.0,
+              "onice_xgf": 0.335,
+              "onice_xga": 0.587
+            }
+          }
+        },
+        {
+          "game_id": "2026020108",
+          "player_id": "8479520",
+          "name": "Brandon Duhaime",
+          "position": "L",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 702.0,
+              "onice_xgf": 0.416,
+              "onice_xga": 0.217
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 669.0,
+              "onice_xgf": 0.416,
+              "onice_xga": 0.189
+            }
+          }
+        },
+        {
+          "game_id": "2026020108",
+          "player_id": "8479772",
+          "name": "Zack MacEwen",
+          "position": "R",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 327.0,
+              "onice_xgf": 0.241,
+              "onice_xga": 0.17
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 327.0,
+              "onice_xgf": 0.241,
+              "onice_xga": 0.17
+            }
+          }
+        },
+        {
+          "game_id": "2026020108",
+          "player_id": "8480893",
+          "name": "Kirill Marchenko",
+          "position": "R",
+          "stats": {
+            "all": {
+              "goals": 3.0,
+              "ixg": 0.529,
+              "shots": 3.0,
+              "toi_seconds": 1116.0,
+              "onice_xgf": 0.974,
+              "onice_xga": 1.241
+            },
+            "5on5": {
+              "goals": 2.0,
+              "ixg": 0.228,
+              "shots": 2.0,
+              "toi_seconds": 982.0,
+              "onice_xgf": 0.513,
+              "onice_xga": 0.54
+            }
+          }
+        },
+        {
+          "game_id": "2026020108",
+          "player_id": "8483565",
+          "name": "Nick Blankenburg",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.29,
+              "shots": 2.0,
+              "toi_seconds": 937.0,
+              "onice_xgf": 0.922,
+              "onice_xga": 0.374
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.287,
+              "shots": 2.0,
+              "toi_seconds": 893.0,
+              "onice_xgf": 0.919,
+              "onice_xga": 0.331
+            }
+          }
+        },
+        {
+          "game_id": "2026020108",
+          "player_id": "8484158",
+          "name": "Easton Cowan",
+          "position": "R",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.126,
+              "shots": 2.0,
+              "toi_seconds": 999.0,
+              "onice_xgf": 0.689,
+              "onice_xga": 0.302
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.126,
+              "shots": 2.0,
+              "toi_seconds": 977.0,
+              "onice_xgf": 0.686,
+              "onice_xga": 0.302
+            }
+          }
+        },
+        {
+          "game_id": "2026020108",
+          "player_id": "8486067",
+          "name": "Gavin McKenna",
+          "position": "L",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.237,
+              "shots": 1.0,
+              "toi_seconds": 396.0,
+              "onice_xgf": 0.346,
+              "onice_xga": 0.298
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.237,
+              "shots": 1.0,
+              "toi_seconds": 396.0,
+              "onice_xgf": 0.346,
+              "onice_xga": 0.298
+            }
+          }
+        },
+        {
+          "game_id": "2026020125",
+          "player_id": "8475171",
+          "name": "Oliver Ekman-Larsson",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 1119.0,
+              "onice_xgf": 1.486,
+              "onice_xga": 0.477
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 1055.0,
+              "onice_xgf": 1.178,
+              "onice_xga": 0.477
+            }
+          }
+        },
+        {
+          "game_id": "2026020125",
+          "player_id": "8476853",
+          "name": "Morgan Rielly",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.012,
+              "shots": 1.0,
+              "toi_seconds": 1070.0,
+              "onice_xgf": 0.48,
+              "onice_xga": 0.942
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.012,
+              "shots": 1.0,
+              "toi_seconds": 990.0,
+              "onice_xgf": 0.48,
+              "onice_xga": 0.829
+            }
+          }
+        },
+        {
+          "game_id": "2026020125",
+          "player_id": "8476925",
+          "name": "Colton Sissons",
+          "position": "C",
+          "stats": {
+            "all": {
+              "goals": 1.0,
+              "ixg": 0.07,
+              "shots": 1.0,
+              "toi_seconds": 908.0,
+              "onice_xgf": 0.658,
+              "onice_xga": 0.715
+            },
+            "5on5": {
+              "goals": 1.0,
+              "ixg": 0.07,
+              "shots": 1.0,
+              "toi_seconds": 731.0,
+              "onice_xgf": 0.643,
+              "onice_xga": 0.212
+            }
+          }
+        },
+        {
+          "game_id": "2026020125",
+          "player_id": "8476927",
+          "name": "Teddy Blueger",
+          "position": "C",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.017,
+              "shots": 2.0,
+              "toi_seconds": 889.0,
+              "onice_xgf": 0.292,
+              "onice_xga": 0.74
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.016,
+              "shots": 1.0,
+              "toi_seconds": 805.0,
+              "onice_xgf": 0.291,
+              "onice_xga": 0.627
+            }
+          }
+        },
+        {
+          "game_id": "2026020125",
+          "player_id": "8476931",
+          "name": "Jake McCabe",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.174,
+              "shots": 1.0,
+              "toi_seconds": 1197.0,
+              "onice_xgf": 0.501,
+              "onice_xga": 0.594
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.174,
+              "shots": 1.0,
+              "toi_seconds": 1000.0,
+              "onice_xgf": 0.5,
+              "onice_xga": 0.466
+            }
+          }
+        },
+        {
+          "game_id": "2026020125",
+          "player_id": "8477426",
+          "name": "Nick Paul",
+          "position": "L",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.469,
+              "shots": 0.0,
+              "toi_seconds": 876.0,
+              "onice_xgf": 1.189,
+              "onice_xga": 0.441
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.469,
+              "shots": 0.0,
+              "toi_seconds": 761.0,
+              "onice_xgf": 1.189,
+              "onice_xga": 0.313
+            }
+          }
+        },
+        {
+          "game_id": "2026020125",
+          "player_id": "8477939",
+          "name": "William Nylander",
+          "position": "R",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.058,
+              "shots": 1.0,
+              "toi_seconds": 1234.0,
+              "onice_xgf": 1.118,
+              "onice_xga": 1.436
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.044,
+              "shots": 0.0,
+              "toi_seconds": 890.0,
+              "onice_xgf": 0.242,
+              "onice_xga": 1.061
+            }
+          }
+        },
+        {
+          "game_id": "2026020125",
+          "player_id": "8478178",
+          "name": "Darren Raddysh",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.089,
+              "shots": 3.0,
+              "toi_seconds": 1461.0,
+              "onice_xgf": 1.355,
+              "onice_xga": 0.707
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.036,
+              "shots": 2.0,
+              "toi_seconds": 1096.0,
+              "onice_xgf": 0.479,
+              "onice_xga": 0.332
+            }
+          }
+        },
+        {
+          "game_id": "2026020125",
+          "player_id": "8478458",
+          "name": "Jack Roslovic",
+          "position": "C",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.476,
+              "shots": 5.0,
+              "toi_seconds": 954.0,
+              "onice_xgf": 0.609,
+              "onice_xga": 0.694
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.168,
+              "shots": 2.0,
+              "toi_seconds": 890.0,
+              "onice_xgf": 0.301,
+              "onice_xga": 0.694
+            }
+          }
+        },
+        {
+          "game_id": "2026020125",
+          "player_id": "8479318",
+          "name": "Auston Matthews",
+          "position": "C",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.508,
+              "shots": 1.0,
+              "toi_seconds": 1196.0,
+              "onice_xgf": 1.358,
+              "onice_xga": 1.014
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 841.0,
+              "onice_xgf": 0.173,
+              "onice_xga": 0.64
+            }
+          }
+        },
+        {
+          "game_id": "2026020125",
+          "player_id": "8479442",
+          "name": "Troy Stecher",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 1221.0,
+              "onice_xgf": 1.204,
+              "onice_xga": 1.026
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 1013.0,
+              "onice_xgf": 0.895,
+              "onice_xga": 0.785
+            }
+          }
+        },
+        {
+          "game_id": "2026020125",
+          "player_id": "8479520",
+          "name": "Brandon Duhaime",
+          "position": "L",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.075,
+              "shots": 1.0,
+              "toi_seconds": 713.0,
+              "onice_xgf": 0.291,
+              "onice_xga": 0.153
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.075,
+              "shots": 1.0,
+              "toi_seconds": 663.0,
+              "onice_xgf": 0.291,
+              "onice_xga": 0.153
+            }
+          }
+        },
+        {
+          "game_id": "2026020125",
+          "player_id": "8479772",
+          "name": "Zack MacEwen",
+          "position": "R",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.079,
+              "shots": 0.0,
+              "toi_seconds": 583.0,
+              "onice_xgf": 0.192,
+              "onice_xga": 0.201
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.079,
+              "shots": 0.0,
+              "toi_seconds": 583.0,
+              "onice_xgf": 0.192,
+              "onice_xga": 0.201
+            }
+          }
+        },
+        {
+          "game_id": "2026020125",
+          "player_id": "8480870",
+          "name": "Bo Groulx",
+          "position": "C",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.022,
+              "shots": 1.0,
+              "toi_seconds": 600.0,
+              "onice_xgf": 0.436,
+              "onice_xga": 0.058
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.022,
+              "shots": 1.0,
+              "toi_seconds": 552.0,
+              "onice_xgf": 0.436,
+              "onice_xga": 0.058
+            }
+          }
+        },
+        {
+          "game_id": "2026020125",
+          "player_id": "8480893",
+          "name": "Kirill Marchenko",
+          "position": "R",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.491,
+              "shots": 5.0,
+              "toi_seconds": 1005.0,
+              "onice_xgf": 2.108,
+              "onice_xga": 0.614
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.27,
+              "shots": 3.0,
+              "toi_seconds": 658.0,
+              "onice_xgf": 0.923,
+              "onice_xga": 0.239
+            }
+          }
+        },
+        {
+          "game_id": "2026020125",
+          "player_id": "8483565",
+          "name": "Nick Blankenburg",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.062,
+              "shots": 1.0,
+              "toi_seconds": 819.0,
+              "onice_xgf": 0.785,
+              "onice_xga": 0.387
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.062,
+              "shots": 1.0,
+              "toi_seconds": 787.0,
+              "onice_xgf": 0.785,
+              "onice_xga": 0.387
+            }
+          }
+        },
+        {
+          "game_id": "2026020125",
+          "player_id": "8484158",
+          "name": "Easton Cowan",
+          "position": "R",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.18,
+              "shots": 2.0,
+              "toi_seconds": 881.0,
+              "onice_xgf": 1.19,
+              "onice_xga": 0.373
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.18,
+              "shots": 2.0,
+              "toi_seconds": 802.0,
+              "onice_xgf": 1.19,
+              "onice_xga": 0.259
+            }
+          }
+        },
+        {
+          "game_id": "2026020125",
+          "player_id": "8486067",
+          "name": "Gavin McKenna",
+          "position": "L",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.559,
+              "shots": 4.0,
+              "toi_seconds": 1076.0,
+              "onice_xgf": 1.788,
+              "onice_xga": 0.83
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.48,
+              "shots": 3.0,
+              "toi_seconds": 727.0,
+              "onice_xgf": 0.603,
+              "onice_xga": 0.455
+            }
+          }
+        },
+        {
+          "game_id": "2026020139",
+          "player_id": "8475171",
+          "name": "Oliver Ekman-Larsson",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.011,
+              "shots": 1.0,
+              "toi_seconds": 882.0,
+              "onice_xgf": 0.462,
+              "onice_xga": 1.106
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.011,
+              "shots": 1.0,
+              "toi_seconds": 707.0,
+              "onice_xgf": 0.394,
+              "onice_xga": 0.869
+            }
+          }
+        },
+        {
+          "game_id": "2026020139",
+          "player_id": "8476853",
+          "name": "Morgan Rielly",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.236,
+              "shots": 3.0,
+              "toi_seconds": 1265.0,
+              "onice_xgf": 1.18,
+              "onice_xga": 0.965
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.2,
+              "shots": 2.0,
+              "toi_seconds": 1049.0,
+              "onice_xgf": 0.908,
+              "onice_xga": 0.965
+            }
+          }
+        },
+        {
+          "game_id": "2026020139",
+          "player_id": "8476925",
+          "name": "Colton Sissons",
+          "position": "C",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.189,
+              "shots": 2.0,
+              "toi_seconds": 975.0,
+              "onice_xgf": 1.177,
+              "onice_xga": 1.137
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.158,
+              "shots": 2.0,
+              "toi_seconds": 670.0,
+              "onice_xgf": 0.261,
+              "onice_xga": 0.752
+            }
+          }
+        },
+        {
+          "game_id": "2026020139",
+          "player_id": "8476927",
+          "name": "Teddy Blueger",
+          "position": "C",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.109,
+              "shots": 2.0,
+              "toi_seconds": 712.0,
+              "onice_xgf": 0.418,
+              "onice_xga": 0.943
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 462.0,
+              "onice_xgf": 0.279,
+              "onice_xga": 0.558
+            }
+          }
+        },
+        {
+          "game_id": "2026020139",
+          "player_id": "8476931",
+          "name": "Jake McCabe",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.041,
+              "shots": 1.0,
+              "toi_seconds": 1381.0,
+              "onice_xgf": 1.778,
+              "onice_xga": 2.179
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.041,
+              "shots": 1.0,
+              "toi_seconds": 967.0,
+              "onice_xgf": 0.746,
+              "onice_xga": 1.7
+            }
+          }
+        },
+        {
+          "game_id": "2026020139",
+          "player_id": "8477426",
+          "name": "Nick Paul",
+          "position": "L",
+          "stats": {
+            "all": {
+              "goals": 1.0,
+              "ixg": 0.96,
+              "shots": 1.0,
+              "toi_seconds": 1132.0,
+              "onice_xgf": 1.939,
+              "onice_xga": 1.252
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.183,
+              "shots": 0.0,
+              "toi_seconds": 883.0,
+              "onice_xgf": 0.891,
+              "onice_xga": 1.086
+            }
+          }
+        },
+        {
+          "game_id": "2026020139",
+          "player_id": "8477939",
+          "name": "William Nylander",
+          "position": "R",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.449,
+              "shots": 3.0,
+              "toi_seconds": 1247.0,
+              "onice_xgf": 2.237,
+              "onice_xga": 1.164
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.243,
+              "shots": 2.0,
+              "toi_seconds": 834.0,
+              "onice_xgf": 0.79,
+              "onice_xga": 1.004
+            }
+          }
+        },
+        {
+          "game_id": "2026020139",
+          "player_id": "8478178",
+          "name": "Darren Raddysh",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.318,
+              "shots": 5.0,
+              "toi_seconds": 1599.0,
+              "onice_xgf": 3.331,
+              "onice_xga": 1.717
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.052,
+              "shots": 3.0,
+              "toi_seconds": 1027.0,
+              "onice_xgf": 0.865,
+              "onice_xga": 1.507
+            }
+          }
+        },
+        {
+          "game_id": "2026020139",
+          "player_id": "8478458",
+          "name": "Jack Roslovic",
+          "position": "C",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.34,
+              "shots": 0.0,
+              "toi_seconds": 913.0,
+              "onice_xgf": 0.562,
+              "onice_xga": 0.92
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.34,
+              "shots": 0.0,
+              "toi_seconds": 797.0,
+              "onice_xgf": 0.562,
+              "onice_xga": 0.92
+            }
+          }
+        },
+        {
+          "game_id": "2026020139",
+          "player_id": "8479318",
+          "name": "Auston Matthews",
+          "position": "C",
+          "stats": {
+            "all": {
+              "goals": 1.0,
+              "ixg": 0.618,
+              "shots": 3.0,
+              "toi_seconds": 1257.0,
+              "onice_xgf": 2.714,
+              "onice_xga": 1.204
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.158,
+              "shots": 2.0,
+              "toi_seconds": 855.0,
+              "onice_xgf": 0.591,
+              "onice_xga": 1.043
+            }
+          }
+        },
+        {
+          "game_id": "2026020139",
+          "player_id": "8479442",
+          "name": "Troy Stecher",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.036,
+              "shots": 1.0,
+              "toi_seconds": 1213.0,
+              "onice_xgf": 0.766,
+              "onice_xga": 1.493
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.036,
+              "shots": 1.0,
+              "toi_seconds": 924.0,
+              "onice_xgf": 0.666,
+              "onice_xga": 0.997
+            }
+          }
+        },
+        {
+          "game_id": "2026020139",
+          "player_id": "8479520",
+          "name": "Brandon Duhaime",
+          "position": "L",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.31,
+              "shots": 0.0,
+              "toi_seconds": 642.0,
+              "onice_xgf": 0.443,
+              "onice_xga": 0.853
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.075,
+              "shots": 0.0,
+              "toi_seconds": 481.0,
+              "onice_xgf": 0.171,
+              "onice_xga": 0.687
+            }
+          }
+        },
+        {
+          "game_id": "2026020139",
+          "player_id": "8479772",
+          "name": "Zack MacEwen",
+          "position": "R",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.072,
+              "shots": 2.0,
+              "toi_seconds": 356.0,
+              "onice_xgf": 0.148,
+              "onice_xga": 0.44
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.072,
+              "shots": 2.0,
+              "toi_seconds": 356.0,
+              "onice_xgf": 0.148,
+              "onice_xga": 0.44
+            }
+          }
+        },
+        {
+          "game_id": "2026020139",
+          "player_id": "8479968",
+          "name": "Vinni Lettieri",
+          "position": "C",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.021,
+              "shots": 1.0,
+              "toi_seconds": 560.0,
+              "onice_xgf": 0.237,
+              "onice_xga": 0.517
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.021,
+              "shots": 1.0,
+              "toi_seconds": 492.0,
+              "onice_xgf": 0.237,
+              "onice_xga": 0.517
+            }
+          }
+        },
+        {
+          "game_id": "2026020139",
+          "player_id": "8480893",
+          "name": "Kirill Marchenko",
+          "position": "R",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.319,
+              "shots": 2.0,
+              "toi_seconds": 1041.0,
+              "onice_xgf": 2.06,
+              "onice_xga": 0.689
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.07,
+              "shots": 1.0,
+              "toi_seconds": 768.0,
+              "onice_xgf": 0.761,
+              "onice_xga": 0.689
+            }
+          }
+        },
+        {
+          "game_id": "2026020139",
+          "player_id": "8483565",
+          "name": "Nick Blankenburg",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.059,
+              "shots": 2.0,
+              "toi_seconds": 616.0,
+              "onice_xgf": 0.211,
+              "onice_xga": 0.342
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.059,
+              "shots": 2.0,
+              "toi_seconds": 552.0,
+              "onice_xgf": 0.179,
+              "onice_xga": 0.342
+            }
+          }
+        },
+        {
+          "game_id": "2026020139",
+          "player_id": "8484158",
+          "name": "Easton Cowan",
+          "position": "R",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.16,
+              "shots": 2.0,
+              "toi_seconds": 919.0,
+              "onice_xgf": 0.81,
+              "onice_xga": 0.892
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.16,
+              "shots": 2.0,
+              "toi_seconds": 781.0,
+              "onice_xgf": 0.709,
+              "onice_xga": 0.892
+            }
+          }
+        },
+        {
+          "game_id": "2026020139",
+          "player_id": "8486067",
+          "name": "Gavin McKenna",
+          "position": "L",
+          "stats": {
+            "all": {
+              "goals": 1.0,
+              "ixg": 0.265,
+              "shots": 1.0,
+              "toi_seconds": 690.0,
+              "onice_xgf": 1.535,
+              "onice_xga": 0.535
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 430.0,
+              "onice_xgf": 0.237,
+              "onice_xga": 0.535
+            }
+          }
+        },
+        {
+          "game_id": "2026020145",
+          "player_id": "8475171",
+          "name": "Oliver Ekman-Larsson",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.365,
+              "shots": 1.0,
+              "toi_seconds": 1400.0,
+              "onice_xgf": 0.87,
+              "onice_xga": 1.218
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.032,
+              "shots": 1.0,
+              "toi_seconds": 919.0,
+              "onice_xgf": 0.288,
+              "onice_xga": 0.721
+            }
+          }
+        },
+        {
+          "game_id": "2026020145",
+          "player_id": "8476853",
+          "name": "Morgan Rielly",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.019,
+              "shots": 0.0,
+              "toi_seconds": 1366.0,
+              "onice_xgf": 1.054,
+              "onice_xga": 1.375
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.019,
+              "shots": 0.0,
+              "toi_seconds": 904.0,
+              "onice_xgf": 0.555,
+              "onice_xga": 0.991
+            }
+          }
+        },
+        {
+          "game_id": "2026020145",
+          "player_id": "8476925",
+          "name": "Colton Sissons",
+          "position": "C",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.045,
+              "shots": 1.0,
+              "toi_seconds": 863.0,
+              "onice_xgf": 0.108,
+              "onice_xga": 0.846
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 598.0,
+              "onice_xgf": 0.063,
+              "onice_xga": 0.513
+            }
+          }
+        },
+        {
+          "game_id": "2026020145",
+          "player_id": "8476927",
+          "name": "Teddy Blueger",
+          "position": "C",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 963.0,
+              "onice_xgf": 0.083,
+              "onice_xga": 1.674
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 630.0,
+              "onice_xgf": 0.038,
+              "onice_xga": 1.009
+            }
+          }
+        },
+        {
+          "game_id": "2026020145",
+          "player_id": "8476931",
+          "name": "Jake McCabe",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 255.0,
+              "onice_xgf": 0.045,
+              "onice_xga": 0.147
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 208.0,
+              "onice_xgf": 0.0,
+              "onice_xga": 0.064
+            }
+          }
+        },
+        {
+          "game_id": "2026020145",
+          "player_id": "8477426",
+          "name": "Nick Paul",
+          "position": "L",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.348,
+              "shots": 2.0,
+              "toi_seconds": 1010.0,
+              "onice_xgf": 0.45,
+              "onice_xga": 0.996
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.22,
+              "shots": 1.0,
+              "toi_seconds": 682.0,
+              "onice_xgf": 0.322,
+              "onice_xga": 0.297
+            }
+          }
+        },
+        {
+          "game_id": "2026020145",
+          "player_id": "8477939",
+          "name": "William Nylander",
+          "position": "R",
+          "stats": {
+            "all": {
+              "goals": 1.0,
+              "ixg": 0.156,
+              "shots": 2.0,
+              "toi_seconds": 1076.0,
+              "onice_xgf": 1.239,
+              "onice_xga": 0.568
+            },
+            "5on5": {
+              "goals": 1.0,
+              "ixg": 0.076,
+              "shots": 2.0,
+              "toi_seconds": 711.0,
+              "onice_xgf": 0.385,
+              "onice_xga": 0.254
+            }
+          }
+        },
+        {
+          "game_id": "2026020145",
+          "player_id": "8478178",
+          "name": "Darren Raddysh",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.016,
+              "shots": 1.0,
+              "toi_seconds": 1229.0,
+              "onice_xgf": 1.552,
+              "onice_xga": 1.114
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.01,
+              "shots": 1.0,
+              "toi_seconds": 833.0,
+              "onice_xgf": 0.653,
+              "onice_xga": 0.597
+            }
+          }
+        },
+        {
+          "game_id": "2026020145",
+          "player_id": "8478458",
+          "name": "Jack Roslovic",
+          "position": "C",
+          "stats": {
+            "all": {
+              "goals": 1.0,
+              "ixg": 0.146,
+              "shots": 2.0,
+              "toi_seconds": 942.0,
+              "onice_xgf": 1.449,
+              "onice_xga": 0.585
+            },
+            "5on5": {
+              "goals": 1.0,
+              "ixg": 0.146,
+              "shots": 2.0,
+              "toi_seconds": 737.0,
+              "onice_xgf": 0.78,
+              "onice_xga": 0.451
+            }
+          }
+        },
+        {
+          "game_id": "2026020145",
+          "player_id": "8479318",
+          "name": "Auston Matthews",
+          "position": "C",
+          "stats": {
+            "all": {
+              "goals": 1.0,
+              "ixg": 0.385,
+              "shots": 3.0,
+              "toi_seconds": 1026.0,
+              "onice_xgf": 1.551,
+              "onice_xga": 0.729
+            },
+            "5on5": {
+              "goals": 1.0,
+              "ixg": 0.244,
+              "shots": 2.0,
+              "toi_seconds": 692.0,
+              "onice_xgf": 0.78,
+              "onice_xga": 0.416
+            }
+          }
+        },
+        {
+          "game_id": "2026020145",
+          "player_id": "8479442",
+          "name": "Troy Stecher",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.045,
+              "shots": 2.0,
+              "toi_seconds": 1585.0,
+              "onice_xgf": 0.671,
+              "onice_xga": 1.817
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.003,
+              "shots": 1.0,
+              "toi_seconds": 1156.0,
+              "onice_xgf": 0.501,
+              "onice_xga": 1.057
+            }
+          }
+        },
+        {
+          "game_id": "2026020145",
+          "player_id": "8479520",
+          "name": "Brandon Duhaime",
+          "position": "L",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 815.0,
+              "onice_xgf": 0.038,
+              "onice_xga": 1.285
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 670.0,
+              "onice_xgf": 0.038,
+              "onice_xga": 1.105
+            }
+          }
+        },
+        {
+          "game_id": "2026020145",
+          "player_id": "8479772",
+          "name": "Zack MacEwen",
+          "position": "R",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 316.0,
+              "onice_xgf": 0.038,
+              "onice_xga": 0.149
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 316.0,
+              "onice_xgf": 0.038,
+              "onice_xga": 0.149
+            }
+          }
+        },
+        {
+          "game_id": "2026020145",
+          "player_id": "8479968",
+          "name": "Vinni Lettieri",
+          "position": "C",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.165,
+              "shots": 0.0,
+              "toi_seconds": 527.0,
+              "onice_xgf": 0.54,
+              "onice_xga": 0.471
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 399.0,
+              "onice_xgf": 0.0,
+              "onice_xga": 0.471
+            }
+          }
+        },
+        {
+          "game_id": "2026020145",
+          "player_id": "8480893",
+          "name": "Kirill Marchenko",
+          "position": "R",
+          "stats": {
+            "all": {
+              "goals": 1.0,
+              "ixg": 0.408,
+              "shots": 2.0,
+              "toi_seconds": 1157.0,
+              "onice_xgf": 1.156,
+              "onice_xga": 1.127
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.074,
+              "shots": 1.0,
+              "toi_seconds": 895.0,
+              "onice_xgf": 0.385,
+              "onice_xga": 0.829
+            }
+          }
+        },
+        {
+          "game_id": "2026020145",
+          "player_id": "8483546",
+          "name": "Marshall Rifai",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 1.0,
+              "ixg": 0.07,
+              "shots": 2.0,
+              "toi_seconds": 1154.0,
+              "onice_xgf": 0.593,
+              "onice_xga": 1.004
+            },
+            "5on5": {
+              "goals": 1.0,
+              "ixg": 0.07,
+              "shots": 2.0,
+              "toi_seconds": 1014.0,
+              "onice_xgf": 0.423,
+              "onice_xga": 0.955
+            }
+          }
+        },
+        {
+          "game_id": "2026020145",
+          "player_id": "8484158",
+          "name": "Easton Cowan",
+          "position": "R",
+          "stats": {
+            "all": {
+              "goals": 1.0,
+              "ixg": 0.391,
+              "shots": 2.0,
+              "toi_seconds": 818.0,
+              "onice_xgf": 1.28,
+              "onice_xga": 0.477
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.307,
+              "shots": 1.0,
+              "toi_seconds": 586.0,
+              "onice_xgf": 0.656,
+              "onice_xga": 0.436
+            }
+          }
+        },
+        {
+          "game_id": "2026020145",
+          "player_id": "8486067",
+          "name": "Gavin McKenna",
+          "position": "L",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.212,
+              "shots": 2.0,
+              "toi_seconds": 778.0,
+              "onice_xgf": 0.879,
+              "onice_xga": 0.719
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 533.0,
+              "onice_xgf": 0.108,
+              "onice_xga": 0.421
+            }
+          }
+        },
+        {
+          "game_id": "2026020155",
+          "player_id": "8475171",
+          "name": "Oliver Ekman-Larsson",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.045,
+              "shots": 1.0,
+              "toi_seconds": 1162.0,
+              "onice_xgf": 0.769,
+              "onice_xga": 0.613
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.045,
+              "shots": 1.0,
+              "toi_seconds": 1047.0,
+              "onice_xgf": 0.654,
+              "onice_xga": 0.451
+            }
+          }
+        },
+        {
+          "game_id": "2026020155",
+          "player_id": "8476853",
+          "name": "Morgan Rielly",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.047,
+              "shots": 3.0,
+              "toi_seconds": 1258.0,
+              "onice_xgf": 1.398,
+              "onice_xga": 1.028
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.047,
+              "shots": 3.0,
+              "toi_seconds": 1178.0,
+              "onice_xgf": 1.398,
+              "onice_xga": 0.866
+            }
+          }
+        },
+        {
+          "game_id": "2026020155",
+          "player_id": "8476925",
+          "name": "Colton Sissons",
+          "position": "C",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 934.0,
+              "onice_xgf": 0.25,
+              "onice_xga": 0.793
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 848.0,
+              "onice_xgf": 0.25,
+              "onice_xga": 0.631
+            }
+          }
+        },
+        {
+          "game_id": "2026020155",
+          "player_id": "8476927",
+          "name": "Teddy Blueger",
+          "position": "C",
+          "stats": {
+            "all": {
+              "goals": 1.0,
+              "ixg": 0.219,
+              "shots": 1.0,
+              "toi_seconds": 918.0,
+              "onice_xgf": 0.644,
+              "onice_xga": 0.255
+            },
+            "5on5": {
+              "goals": 1.0,
+              "ixg": 0.219,
+              "shots": 1.0,
+              "toi_seconds": 834.0,
+              "onice_xgf": 0.644,
+              "onice_xga": 0.255
+            }
+          }
+        },
+        {
+          "game_id": "2026020155",
+          "player_id": "8476931",
+          "name": "Jake McCabe",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.07,
+              "shots": 5.0,
+              "toi_seconds": 1263.0,
+              "onice_xgf": 0.611,
+              "onice_xga": 0.471
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.07,
+              "shots": 5.0,
+              "toi_seconds": 1160.0,
+              "onice_xgf": 0.611,
+              "onice_xga": 0.471
+            }
+          }
+        },
+        {
+          "game_id": "2026020155",
+          "player_id": "8477426",
+          "name": "Nick Paul",
+          "position": "L",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.151,
+              "shots": 1.0,
+              "toi_seconds": 1047.0,
+              "onice_xgf": 0.62,
+              "onice_xga": 0.62
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.151,
+              "shots": 1.0,
+              "toi_seconds": 979.0,
+              "onice_xgf": 0.62,
+              "onice_xga": 0.458
+            }
+          }
+        },
+        {
+          "game_id": "2026020155",
+          "player_id": "8477939",
+          "name": "William Nylander",
+          "position": "R",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.29,
+              "shots": 1.0,
+              "toi_seconds": 1212.0,
+              "onice_xgf": 1.36,
+              "onice_xga": 0.494
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.219,
+              "shots": 1.0,
+              "toi_seconds": 1029.0,
+              "onice_xgf": 0.906,
+              "onice_xga": 0.458
+            }
+          }
+        },
+        {
+          "game_id": "2026020155",
+          "player_id": "8478178",
+          "name": "Darren Raddysh",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.069,
+              "shots": 2.0,
+              "toi_seconds": 1457.0,
+              "onice_xgf": 1.454,
+              "onice_xga": 0.502
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.069,
+              "shots": 2.0,
+              "toi_seconds": 1271.0,
+              "onice_xgf": 1.115,
+              "onice_xga": 0.465
+            }
+          }
+        },
+        {
+          "game_id": "2026020155",
+          "player_id": "8478458",
+          "name": "Jack Roslovic",
+          "position": "C",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.163,
+              "shots": 3.0,
+              "toi_seconds": 958.0,
+              "onice_xgf": 1.024,
+              "onice_xga": 0.562
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.163,
+              "shots": 3.0,
+              "toi_seconds": 886.0,
+              "onice_xgf": 0.909,
+              "onice_xga": 0.562
+            }
+          }
+        },
+        {
+          "game_id": "2026020155",
+          "player_id": "8479318",
+          "name": "Auston Matthews",
+          "position": "C",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.613,
+              "shots": 4.0,
+              "toi_seconds": 1156.0,
+              "onice_xgf": 1.728,
+              "onice_xga": 0.694
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.442,
+              "shots": 3.0,
+              "toi_seconds": 938.0,
+              "onice_xgf": 1.274,
+              "onice_xga": 0.657
+            }
+          }
+        },
+        {
+          "game_id": "2026020155",
+          "player_id": "8479442",
+          "name": "Troy Stecher",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 1.0,
+              "ixg": 0.036,
+              "shots": 1.0,
+              "toi_seconds": 1217.0,
+              "onice_xgf": 0.784,
+              "onice_xga": 0.813
+            },
+            "5on5": {
+              "goals": 1.0,
+              "ixg": 0.036,
+              "shots": 1.0,
+              "toi_seconds": 1142.0,
+              "onice_xgf": 0.784,
+              "onice_xga": 0.813
+            }
+          }
+        },
+        {
+          "game_id": "2026020155",
+          "player_id": "8479520",
+          "name": "Brandon Duhaime",
+          "position": "L",
+          "stats": {
+            "all": {
+              "goals": 1.0,
+              "ixg": 0.264,
+              "shots": 2.0,
+              "toi_seconds": 854.0,
+              "onice_xgf": 0.675,
+              "onice_xga": 0.188
+            },
+            "5on5": {
+              "goals": 1.0,
+              "ixg": 0.264,
+              "shots": 2.0,
+              "toi_seconds": 794.0,
+              "onice_xgf": 0.675,
+              "onice_xga": 0.188
+            }
+          }
+        },
+        {
+          "game_id": "2026020155",
+          "player_id": "8479772",
+          "name": "Zack MacEwen",
+          "position": "R",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.084,
+              "shots": 2.0,
+              "toi_seconds": 426.0,
+              "onice_xgf": 0.454,
+              "onice_xga": 0.203
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.084,
+              "shots": 2.0,
+              "toi_seconds": 426.0,
+              "onice_xgf": 0.454,
+              "onice_xga": 0.203
+            }
+          }
+        },
+        {
+          "game_id": "2026020155",
+          "player_id": "8479968",
+          "name": "Vinni Lettieri",
+          "position": "C",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 608.0,
+              "onice_xgf": 0.001,
+              "onice_xga": 0.484
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 566.0,
+              "onice_xgf": 0.001,
+              "onice_xga": 0.484
+            }
+          }
+        },
+        {
+          "game_id": "2026020155",
+          "player_id": "8480893",
+          "name": "Kirill Marchenko",
+          "position": "R",
+          "stats": {
+            "all": {
+              "goals": 1.0,
+              "ixg": 0.302,
+              "shots": 4.0,
+              "toi_seconds": 1103.0,
+              "onice_xgf": 1.139,
+              "onice_xga": 0.429
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.227,
+              "shots": 2.0,
+              "toi_seconds": 950.0,
+              "onice_xgf": 0.8,
+              "onice_xga": 0.392
+            }
+          }
+        },
+        {
+          "game_id": "2026020155",
+          "player_id": "8483565",
+          "name": "Nick Blankenburg",
+          "position": "D",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.017,
+              "shots": 0.0,
+              "toi_seconds": 687.0,
+              "onice_xgf": 0.591,
+              "onice_xga": 0.51
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.017,
+              "shots": 0.0,
+              "toi_seconds": 655.0,
+              "onice_xgf": 0.476,
+              "onice_xga": 0.51
+            }
+          }
+        },
+        {
+          "game_id": "2026020155",
+          "player_id": "8484158",
+          "name": "Easton Cowan",
+          "position": "R",
+          "stats": {
+            "all": {
+              "goals": 1.0,
+              "ixg": 0.509,
+              "shots": 4.0,
+              "toi_seconds": 1008.0,
+              "onice_xgf": 1.137,
+              "onice_xga": 0.591
+            },
+            "5on5": {
+              "goals": 1.0,
+              "ixg": 0.465,
+              "shots": 3.0,
+              "toi_seconds": 941.0,
+              "onice_xgf": 1.022,
+              "onice_xga": 0.591
+            }
+          }
+        },
+        {
+          "game_id": "2026020155",
+          "player_id": "8486067",
+          "name": "Gavin McKenna",
+          "position": "L",
+          "stats": {
+            "all": {
+              "goals": 0.0,
+              "ixg": 0.093,
+              "shots": 1.0,
+              "toi_seconds": 644.0,
+              "onice_xgf": 0.34,
+              "onice_xga": 0.521
+            },
+            "5on5": {
+              "goals": 0.0,
+              "ixg": 0.0,
+              "shots": 0.0,
+              "toi_seconds": 491.0,
+              "onice_xgf": 0.001,
+              "onice_xga": 0.484
+            }
+          }
         }
       ],
       "goalies": [
@@ -2938,6 +5710,132 @@
               "ga": 3.0,
               "shots_against": 22.0,
               "toi_seconds": 2638.0,
+              "saves": 19.0
+            }
+          }
+        },
+        {
+          "game_id": "2026020102",
+          "player_id": "8476932",
+          "name": "Anthony Stolarz",
+          "stats": {
+            "all": {
+              "xga": 2.456,
+              "ga": 5.0,
+              "shots_against": 28.0,
+              "toi_seconds": 3446.0,
+              "saves": 23.0
+            },
+            "5on5": {
+              "xga": 1.575,
+              "ga": 4.0,
+              "shots_against": 21.0,
+              "toi_seconds": 2738.0,
+              "saves": 17.0
+            }
+          }
+        },
+        {
+          "game_id": "2026020108",
+          "player_id": "8475683",
+          "name": "Sergei Bobrovsky",
+          "stats": {
+            "all": {
+              "xga": 3.098,
+              "ga": 5.0,
+              "shots_against": 35.0,
+              "toi_seconds": 3794.0,
+              "saves": 30.0
+            },
+            "5on5": {
+              "xga": 1.84,
+              "ga": 4.0,
+              "shots_against": 28.0,
+              "toi_seconds": 3370.0,
+              "saves": 24.0
+            }
+          }
+        },
+        {
+          "game_id": "2026020125",
+          "player_id": "8475683",
+          "name": "Sergei Bobrovsky",
+          "stats": {
+            "all": {
+              "xga": 1.879,
+              "ga": 3.0,
+              "shots_against": 19.0,
+              "toi_seconds": 3558.0,
+              "saves": 16.0
+            },
+            "5on5": {
+              "xga": 1.637,
+              "ga": 3.0,
+              "shots_against": 17.0,
+              "toi_seconds": 2969.0,
+              "saves": 14.0
+            }
+          }
+        },
+        {
+          "game_id": "2026020139",
+          "player_id": "8475683",
+          "name": "Sergei Bobrovsky",
+          "stats": {
+            "all": {
+              "xga": 3.812,
+              "ga": 1.0,
+              "shots_against": 31.0,
+              "toi_seconds": 3600.0,
+              "saves": 30.0
+            },
+            "5on5": {
+              "xga": 3.1,
+              "ga": 1.0,
+              "shots_against": 27.0,
+              "toi_seconds": 2607.0,
+              "saves": 26.0
+            }
+          }
+        },
+        {
+          "game_id": "2026020145",
+          "player_id": "8476932",
+          "name": "Anthony Stolarz",
+          "stats": {
+            "all": {
+              "xga": 3.441,
+              "ga": 2.0,
+              "shots_against": 37.0,
+              "toi_seconds": 3600.0,
+              "saves": 35.0
+            },
+            "5on5": {
+              "xga": 2.147,
+              "ga": 2.0,
+              "shots_against": 24.0,
+              "toi_seconds": 2500.0,
+              "saves": 22.0
+            }
+          }
+        },
+        {
+          "game_id": "2026020155",
+          "player_id": "8475683",
+          "name": "Sergei Bobrovsky",
+          "stats": {
+            "all": {
+              "xga": 1.987,
+              "ga": 4.0,
+              "shots_against": 25.0,
+              "toi_seconds": 3568.0,
+              "saves": 21.0
+            },
+            "5on5": {
+              "xga": 1.788,
+              "ga": 4.0,
+              "shots_against": 23.0,
+              "toi_seconds": 3227.0,
               "saves": 19.0
             }
           }

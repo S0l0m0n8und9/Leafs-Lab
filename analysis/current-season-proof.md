@@ -1,67 +1,40 @@
-# Current games: Leafs Lab proof of value
+# Current-season Leafs Lab evidence
 
-Snapshot retrieved 13 October 2026 at 10:18 UTC. Six completed 2026–27 Toronto games, 29 September–10 October; 108 skater appearances and six goalie appearances. Every statistical comparison below uses this season only. Players are actual Toronto participants, not a projected roster.
+Refreshed October 24, 2026 (New Zealand time). MoneyPuck originals were downloaded October 23 at 21:25 UTC. Coverage is 12 Toronto games, September 29–October 22, 2026; 216 skater appearances and 12 goalie appearances. Dataset and Watch companion share original-file hashes and game identifiers. Automatic refresh remains disabled.
 
-The decision: can Leafs Lab help Ben engage with the current games through useful questions, evidence and follow-up? This is a proof of value, not a product feature release. The useful proposed flow is **before the game: what to watch → after the game: what actually happened → next game: what still needs checking**.
+## Active questions
 
-Jim Hiller is Toronto's current coach ([team announcement](https://www.nhl.com/mapleleafs/news/maple-leafs-name-jim-hiller-41st-head-coach-in-franchise-history)). The current data includes Marchenko following the [September trade](https://www.nhl.com/mapleleafs/news/maple-leafs-complete-trade-with-columbus). These establish current context; none of the observations below identifies a causal coaching effect.
+At 5-on-5 Toronto has 252 shots for and 272 against (48.1% share), but 21.390 xG for and 26.804 against (44.4%). Unblocked attempts are 378–415, averaging 0.0566 xG for and 0.0646 against. High-danger attempts are 5–18. Toronto was below 50% xG in eight of 12 games. Leave-one-game-out shares range from 43.0% to 45.4%; this is a sensitivity check, not a confidence interval. Attack quality versus volume remains an active question.
 
-## Three current questions to watch
+| Bobrovsky: eight appearances | xGA | GA | GSAx |
+| --- | ---: | ---: | ---: |
+| All strengths, inclusive | 27.451 | 25 | +2.451 |
+| 5-on-5 | 18.676 | 24 | -5.324 |
+| 4-on-5 | 6.028 | 0 | +6.028 |
 
-### 1. Is Toronto creating dangerous chances, or just keeping the shot count close?
+All strengths overlaps the component rows; never add them together. The strength split persists descriptively, without proving goalie ability, defensive quality or future outcomes.
 
-At five-on-five, the shot count is nearly even: 130 for, 132 against. Expected goals are 10.253 for and 14.717 against: **41.1% of chance quality**. The 188 unblocked attempts for averaged 0.0545 xG each; the 204 against averaged 0.0721. Opponents' attempts averaged **32.3% more modelled goal probability**. High-danger unblocked attempts were 2 for and 11 against; MoneyPuck defines high danger as at least 20% goal probability.
+Marchenko’s replacement question is **“Is Marchenko creating dangerous opportunities consistently, beyond the goals?”** He has two 5-on-5 goals from 2.326 individual xG over 170.7 minutes in 12 appearances, third in Toronto individual xG. His shared on-ice xG is 7.546–5.910 (56.1%). The guide includes each game's own shots, individual xG, goals and shared on-ice xG. Shared numbers do not isolate his impact or adjust for teammates, opposition or deployment.
 
-Toronto had less than half the five-on-five xG in five of the six games. Omitting any one game leaves the aggregate share between **39.4% and 42.5%**. That is a sensitivity check, not a confidence interval or prediction: one game does not drive the observed gap, but opponent strength, deployment and score state remain unadjusted.
+## Question archive
 
-An optional descriptive decomposition splits the observed -4.464 xG gap into -1.013 from attempt-count differences and -3.451 from average-quality differences. The symmetric product formula averages both teams' values to allocate the arithmetic interaction. It does not identify causes or a coach's contribution.
+“Is Marchenko’s scoring line hiding chance creation?” originally covered six games through October 10, with zero 5-on-5 goals. Archived October 24 as superseded following the October 15 hat trick against Buffalo. [Official NHL evidence](https://www.nhl.com/mapleleafs/video/topic/game-highlights/buf-tor-marchenko-has-a-hat-trick-against-the-sabres-6406934594112). A scoring burst changes the drought framing without establishing persistent chance generation. The replacement was accepted by the owner.
 
-**Watch:** When Toronto has a spell of possession, is the eventual attempt dangerous? Do opponents get a threatening look without needing much volume? Compare the visual impression with shot share and xG share after the game.
+## Latest game and validation
 
-### 2. Where is Bobrovsky actually making the difference?
+The [official NHL summary](https://www.nhl.com/gamecenter/nyr-vs-tor/2026/10/22/2026020155/summary) confirms Toronto’s October 22 win over the Rangers, 5–4. It is the latest game in all three provider files. The refreshed reports add Utah, Buffalo, Islanders, San Jose, Columbus and Rangers since the prior snapshot.
 
-| Four Bobrovsky appearances | Minutes | xGA | GA | GSAx |
-| --- | ---: | ---: | ---: | ---: |
-| All strengths, inclusive | 242.5 | 16.675 | 12 | +4.675 |
-| Five-on-five | 187.4 | 10.311 | 12 | -1.689 |
-| Four-on-five | 27.7 | 4.579 | 0 | +4.579 |
+Source URLs, actual retrieval timestamps, byte counts, headers and SHA-256 hashes are preserved in `analysis/data/current-2026.json` and `analysis/current-proof-results.json`. Original full CSVs remain outside tracked source; portable input keeps only analysis columns.
 
-His positive overall GSAx hides opposite results in these two situations. Other situations also contribute, so the displayed subset rows are not a complete partition; never add the inclusive all-strength total to its components. Across both goalies, Toronto allowed one four-on-five goal from 6.138 goalie-source xGA. That is **+5.138 four-on-five GSAx** across six team games, not an overall penalty-kill percentage.
+Reproduce after downloading with the checked configuration:
 
-**Watch:** During each four-on-five kill, does Toronto prevent dangerous looks, or does the goalie repeatedly have to stop them? Track chance suppression and saves separately. Four goalie appearances cannot establish future performance or prove a system is good or bad.
+```sh
+python3 scripts/refresh_watch.py --raw-dir <download-directory> --bundle <candidate-json>
+python3 analysis/current_game_proof.py --plot
+```
 
-### 3. Is Marchenko's scoring line hiding useful chance creation?
+Calculations validate unique keys, season identifiers, matching game/date/opponent coverage, all five strength situations, individual-to-team reconciliation and team strength totals. All-strength and primary-strength individual goals, xG and unblocked attempts reconcile within 0.02 xG rounding tolerance. Player `other` partitions have discrepancies in Nashville, Vegas and Buffalo; recorded notes retain them and those partitions are excluded from interpretation. Missing values fail rather than becoming zero.
 
-Marchenko has **zero five-on-five goals from 1.457 individual xG** in 87.8 minutes across six games. That individual xG is second among Toronto's participants in this snapshot, narrowly behind Nylander's 1.508. Toronto's on-ice xG share with Marchenko was **54.0%**; with Nylander it was **36.4%**, despite Nylander's three five-on-five goals.
+The model belongs to MoneyPuck. Leafs Lab adds joined evidence, questions, game-by-game follow-up and explicit limits. No tactical tracking, coaching causation, prior-season baseline or forecast is claimed.
 
-That is a distinction between a player's shots, scoring and the shared results while he is on the ice. It is not an isolated player-impact estimate: teammates, matchups, usage and score effects differ. Also, Marchenko recorded **zero unblocked attempts in the latest Colorado game**. The six-game chance-generation signal should be followed rather than treated as a current certainty.
-
-**Watch:** If he plays, does Marchenko get his shooting opportunities back? Check his own attempts and the chances Toronto creates during his minutes after the game. Do not label him a disappointment from goals alone or promise that he will start scoring.
-
-## How the latest game would be read
-
-![Current-season shot-quality comparison and Bobrovsky strength split](current-proof.png)
-
-Toronto's 6–3 win at Colorado included a 3–3 five-on-five score, with five-on-five xG **1.528–2.808 (35.2%)**. The remaining goal difference came from two five-on-four goals and one goal in the team `other` category. NHL's [game summary](https://www.nhl.com/gamecenter/tor-vs-col/2026/10/10/2026020080/summary) confirms the final score and an empty-net goal. This supports a precise review of how Toronto won; it does not make the win undeserved or diagnose its cause.
-
-## Does this add something useful?
-
-MoneyPuck already provides the component metrics and strength controls in its [team stats](https://moneypuck.com/teams.htm), [goalie stats](https://moneypuck.com/goalies.htm), [player views](https://moneypuck.com/player.htm) and [game page](https://moneypuck.com/g.htm?id=2026020080). GSAx and xG share themselves fail the differentiation test. The custom contribution here is the cross-view synthesis, explicit sample sensitivity, descriptive quality/volume decomposition and a persistent question to revisit in the next game.
-
-The evidence supports testing a **current-game companion**, with three watch questions followed by the same questions answered after the game. It does not establish exclusive insights, an analytical edge or that no competitor offers a similar experience. A full competing-site interaction audit was not completed; the Natural Stat Trick page was unavailable to the research tool. Ben's assessment of whether these questions improve his engagement remains the product-value test.
-
-## Inputs, calculation and quality
-
-Listed MoneyPuck inputs: [Toronto team games](https://moneypuck.com/moneypuck/playerData/careers/gameByGame/regular/teams/TOR.csv), [2026 skater games](https://moneypuck.com/moneypuck/playerData/teamPlayerGameByGame/2026/regular/skaters/TOR.csv), [2026 goalie games](https://moneypuck.com/moneypuck/playerData/teamPlayerGameByGame/2026/regular/goalies/TOR.csv). Definitions: [MoneyPuck glossary](https://moneypuck.com/glossary.htm). Source files were downloaded by [GitHub Actions run 38382465038](https://github.com/S0l0m0n8und9/Leafs-Lab/actions/runs/38382465038); the temporary artifact retains original CSVs for three days. The portable JSON contains only the selected current-season input columns and records original file hashes and retrieval times.
-
-| Original input | SHA-256 |
-| --- | --- |
-| Teams | `1e88e24f39180a90f547e4bdebe7d013cd2a109976aebc78a4ed8b218e972661` |
-| Skaters | `a211f3c2478113e47c9005f254be6bd03c6c7b69034ed45dbbd44601e6be4921` |
-| Goalies | `7d392c1aa8aa3a7ed72d7d3e46c375e194fa6ad207ec8a9c1a00741476f69435` |
-
-Run from the repo root: `python3 analysis/current_game_proof.py --plot`. The standard-library calculations validate identifiers, unique keys, game/date/opponent joins, strength coverage, additive individual/team statistics and the decomposition identity. Matplotlib is required only for the optional portable figure. The script executed successfully and the generated figure was visually inspected.
-
-One source caveat is preserved: individual skater `other` totals do not reconcile to team `other` totals for Nashville and Vegas. Those player partitions are excluded from the findings; no cause for the discrepancy is assumed. All-strength and five-on-five individual totals used above reconcile to team totals within a 0.02 xG rounding tolerance. Missing input values fail rather than becoming zero. On-ice xG overlaps between players and is not summed to allocate team contributions.
-
-The analysis is descriptive, uses raw unadjusted xG, and has six-game sampling uncertainty. It contains no previous-season baseline, new xG model, tactical tracking or coach attribution. Notebook runtime packages are unavailable; the preserved Python script and input JSON provide the runnable audit trail.
+![Current-season shot shares and Bobrovsky strength split](current-proof.png)

@@ -94,7 +94,7 @@ def analyze(data):
         'source_manifest': data['source_manifest'], 'source_reconciliation_notes': reconciliation_notes,
         'five_on_five': {'xgf': xgf, 'xga': xga, 'xg_share': share(xgf, xga), 'shots_for': shots_for, 'shots_against': shots_against, 'shot_share': share(shots_for, shots_against), 'unblocked_attempts_for': attempts_for, 'unblocked_attempts_against': attempts_against, 'xg_per_unblocked_attempt_for': quality_for, 'xg_per_unblocked_attempt_against': quality_against, 'high_danger_for': total(five, 'highDangerShotsFor'), 'high_danger_against': total(five, 'highDangerShotsAgainst'), 'games_below_half_xg': sum(r['xg_share'] < 50 for r in game_rows), 'sensitivity': sensitivity, 'descriptive_xg_gap_decomposition': {'volume': volume_component, 'quality': quality_component, 'method': 'Symmetric product decomposition; descriptive arithmetic, not causal attribution'}},
         'games': game_rows, 'players': player_summaries, 'goalies': goalie_rows, 'latest_game_strengths': latest_parts,
-        'limits': ['Six current-season games; no prior-season baseline or predictive certainty.', 'Raw xG is not adjusted for score state, opponent strength or deployment.', 'On-ice stats are shared outcomes and do not isolate individual player impact.', 'Player other-situation totals differ from team other totals in two games; exclude those player partitions from interpretation.', 'No shot timestamps, zone entries, tracking data, shared-line minutes or video coding; no claims about tactics or coach causation.']
+        'limits': [f'{len(all_games)} current-season games; no prior-season baseline or predictive certainty.', 'Raw xG is not adjusted for score state, opponent strength or deployment.', 'On-ice stats are shared outcomes and do not isolate individual player impact.', 'Player other-situation totals differ from team other totals in the recorded reconciliation notes; exclude those player partitions from interpretation.', 'No shot timestamps, zone entries, tracking data, shared-line minutes or video coding; no claims about tactics or coach causation.']
     }
 
 
@@ -104,7 +104,7 @@ def chart_payload(result):
         label = r['date'][5:] + ' ' + r['opponent']
         for series, field in [('Shot share', 'shot_share'), ('Chance-quality share', 'xg_share')]:
             rows.append({'game': label, 'measure': series, 'share': round(r[field], 2)})
-    return {'schemaVersion': 1, 'id': 'leafs-current-shot-quality', 'title': 'Current games: 5-on-5 shot share vs chance-quality share', 'description': 'Toronto · Sep 29–Oct 10, 2026 · six completed games', 'chart': {'type': 'line', 'x': 'game', 'y': 'share', 'series': 'measure', 'showXAxisLabel': False, 'yLabel': 'Toronto share (%)'}, 'rows': rows, 'source': {'label': 'MoneyPuck Toronto game CSV; filtered to 2026 regular season and 5on5', 'files': [{'label': s['kind'] + ' original CSV', 'sha256': s['sha256']} for s in result['source_manifest']['sources'] if s['kind'] == 'teams'], 'caveats': ['Raw unadjusted xG; six-game descriptive sample. Shot share uses shots on goal.', 'Provider retrieved at 2026-10-13T10:18:38Z; source refresh time is unconfirmed.']}, 'generatedAt': result['generated_at'], 'theme': 'codex-classic'}
+    return {'schemaVersion': 1, 'id': 'leafs-current-shot-quality', 'title': 'Current games: 5-on-5 shot share vs chance-quality share', 'description': f"Toronto · {result['coverage']['first_date']}–{result['coverage']['last_date']} · {result['coverage']['games']} completed games", 'chart': {'type': 'line', 'x': 'game', 'y': 'share', 'series': 'measure', 'showXAxisLabel': False, 'yLabel': 'Toronto share (%)'}, 'rows': rows, 'source': {'label': 'MoneyPuck Toronto game CSV; filtered to 2026 regular season and 5on5', 'files': [{'label': s['kind'] + ' original CSV', 'sha256': s['sha256']} for s in result['source_manifest']['sources'] if s['kind'] == 'teams'], 'caveats': ['Raw unadjusted xG; descriptive current-season sample. Shot share uses shots on goal.', 'Source retrieval timestamps and original hashes are recorded in current-proof-results.json; provider refresh time is unconfirmed.']}, 'generatedAt': result['generated_at'], 'theme': 'codex-classic'}
 
 
 def plot(result, output):
@@ -118,7 +118,7 @@ def plot(result, output):
     axes[0].plot(labels, [r['shot_share'] for r in games], 'o--', label='Shots on goal share', color='#778a9b')
     axes[0].plot(labels, [r['xg_share'] for r in games], 'o-', label='Chance-quality (xG) share', color='#0055a5')
     axes[0].axhline(50, color='#555555', lw=1)
-    axes[0].set(ylabel='Toronto share (%)', title='Six current games: counting shots misses the quality gap', ylim=(0, 100))
+    axes[0].set(ylabel='Toronto share (%)', title='Current games: shot volume and chance quality', ylim=(0, 100))
     axes[0].legend(frameon=False)
     bob = [next(r for r in result['goalies'] if r['name'] == 'Sergei Bobrovsky' and r['strength'] == s) for s in ['all', '5on5', '4on5']]
     axes[1].barh(['All strengths\n(inclusive)', '5-on-5', '4-on-5'], [r['gsax'] for r in bob], color='#0055a5')
@@ -127,8 +127,8 @@ def plot(result, output):
     for i, r in enumerate(bob):
         axes[1].text(r['gsax'] + (.1 if r['gsax'] >= 0 else -.1), i, f"{r['gsax']:+.2f}", va='center', ha='left' if r['gsax'] >= 0 else 'right')
     axes[1].set(xlabel='Goalie xGA minus goals allowed (GSAx)', title='Bobrovsky: the overall result hides opposite strength-level results')
-    axes[1].set_xlim(-2.5, 5.7)
-    fig.suptitle('Leafs Lab proof of value · 2026–27 through October 10\nMoneyPuck inputs · six team games; four Bobrovsky appearances', fontsize=13)
+    axes[1].set_xlim(min(r['gsax'] for r in bob) - 1, max(r['gsax'] for r in bob) + 1)
+    fig.suptitle(f"Leafs Lab · 2026–27 through {result['coverage']['last_date']}\nMoneyPuck inputs · {len(games)} team games; {bob[0]['appearances']} Bobrovsky appearances", fontsize=13)
     fig.savefig(output, dpi=160)
     plt.close(fig)
 

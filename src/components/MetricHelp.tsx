@@ -1,6 +1,6 @@
 const explanations = {
   watch:
-    "Shot share measures volume; xG share measures modelled chance quality. High-danger means at least 20% goal probability in the model. Six games are a small sample, not a verdict on a player or coach.",
+    "Shot share measures volume; xG share measures modelled chance quality. High-danger means at least 20% goal probability in the model. Early-season results are a small sample, not a verdict on a player or coach.",
   games:
     "Goals are what went in; xG describes modelled chance quality. Above 50% xG share means Toronto had more of that quality, not a greater than 50% chance of winning. Positive GSAx means fewer goals allowed than the goalie model expected.",
   players:

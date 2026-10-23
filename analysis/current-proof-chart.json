@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "leafs-current-shot-quality",
   "title": "Current games: 5-on-5 shot share vs chance-quality share",
-  "description": "Toronto \u00b7 Sep 29\u2013Oct 10, 2026 \u00b7 six completed games",
+  "description": "Toronto \u00b7 2026-09-29\u20132026-10-22 \u00b7 12 completed games",
   "chart": {
     "type": "line",
     "x": "game",
@@ -71,6 +71,66 @@
       "game": "10-10 COL",
       "measure": "Chance-quality share",
       "share": 35.24
+    },
+    {
+      "game": "10-13 UTA",
+      "measure": "Shot share",
+      "share": 36.36
+    },
+    {
+      "game": "10-13 UTA",
+      "measure": "Chance-quality share",
+      "share": 41.06
+    },
+    {
+      "game": "10-15 BUF",
+      "measure": "Shot share",
+      "share": 47.17
+    },
+    {
+      "game": "10-15 BUF",
+      "measure": "Chance-quality share",
+      "share": 55.35
+    },
+    {
+      "game": "10-17 NYI",
+      "measure": "Shot share",
+      "share": 52.78
+    },
+    {
+      "game": "10-17 NYI",
+      "measure": "Chance-quality share",
+      "share": 56.86
+    },
+    {
+      "game": "10-19 SJS",
+      "measure": "Shot share",
+      "share": 44.9
+    },
+    {
+      "game": "10-19 SJS",
+      "measure": "Chance-quality share",
+      "share": 37.74
+    },
+    {
+      "game": "10-20 CBJ",
+      "measure": "Shot share",
+      "share": 36.84
+    },
+    {
+      "game": "10-20 CBJ",
+      "measure": "Chance-quality share",
+      "share": 35.91
+    },
+    {
+      "game": "10-22 NYR",
+      "measure": "Shot share",
+      "share": 56.6
+    },
+    {
+      "game": "10-22 NYR",
+      "measure": "Chance-quality share",
+      "share": 58.49
     }
   ],
   "source": {
@@ -78,14 +138,14 @@
     "files": [
       {
         "label": "teams original CSV",
-        "sha256": "1e88e24f39180a90f547e4bdebe7d013cd2a109976aebc78a4ed8b218e972661"
+        "sha256": "c188b454bcbd0a3abcf94ff28dfd1c57d5fba99ad0853048ee75b2db6fdd305b"
       }
     ],
     "caveats": [
-      "Raw unadjusted xG; six-game descriptive sample. Shot share uses shots on goal.",
-      "Provider retrieved at 2026-10-13T10:18:38Z; source refresh time is unconfirmed."
+      "Raw unadjusted xG; descriptive current-season sample. Shot share uses shots on goal.",
+      "Source retrieval timestamps and original hashes are recorded in current-proof-results.json; provider refresh time is unconfirmed."
     ]
   },
-  "generatedAt": "2026-10-13T10:28:12.360530+00:00",
+  "generatedAt": "2026-10-23T21:28:47.857721+00:00",
   "theme": "codex-classic"
 }
